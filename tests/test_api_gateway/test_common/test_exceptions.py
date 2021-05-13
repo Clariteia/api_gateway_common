@@ -8,26 +8,17 @@ Minos framework can not be copied and/or distributed without the express permiss
 import unittest
 
 from minos.api_gateway import (
-    EmptyMinosModelSequenceException,
-    MinosAttributeValidationException,
-    MinosConfigDefaultAlreadySetException,
-    MinosConfigException,
-    MinosException,
-    MinosMalformedAttributeException,
-    MinosModelAttributeException,
-    MinosModelException,
-    MinosParseAttributeException,
-    MinosRepositoryAggregateNotFoundException,
-    MinosRepositoryDeletedAggregateException,
-    MinosRepositoryException,
+    EmptyMinosModelSequenceException, MinosAttributeValidationException,
+    MinosConfigDefaultAlreadySetException, MinosConfigException,
+    MinosException, MinosMalformedAttributeException,
+    MinosModelAttributeException, MinosModelException,
+    MinosParseAttributeException, MinosRepositoryAggregateNotFoundException,
+    MinosRepositoryDeletedAggregateException, MinosRepositoryException,
     MinosRepositoryManuallySetAggregateIdException,
     MinosRepositoryManuallySetAggregateVersionException,
-    MinosRepositoryNonProvidedException,
-    MinosRepositoryUnknownActionException,
-    MinosReqAttributeException,
-    MinosTypeAttributeException,
-    MultiTypeMinosModelSequenceException,
-)
+    MinosRepositoryNonProvidedException, MinosRepositoryUnknownActionException,
+    MinosReqAttributeException, MinosTypeAttributeException,
+    MultiTypeMinosModelSequenceException)
 
 
 class TestExceptions(unittest.TestCase):
