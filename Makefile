@@ -22,8 +22,6 @@ endef
 export PRINT_HELP_PYSCRIPT
 
 BROWSER := python -c "$$BROWSER_PYSCRIPT"
-aws_password := $(shell aws codeartifact get-authorization-token --domain pip-clariteia --domain-owner 785264909821 --query authorizationToken --output text)
-aws_repo_url := $(shell aws codeartifact get-repository-endpoint --domain pip-clariteia --domain-owner 785264909821 --repository minos --format pypi --query repositoryEndpoint --output text)
 
 help:
 	@python -c "$$PRINT_HELP_PYSCRIPT" < $(MAKEFILE_LIST)
@@ -49,6 +47,15 @@ clean-test: ## remove test and coverage artifacts
 	rm -fr htmlcov/
 	rm -fr .pytest_cache
 
+env-dev-install:
+	python -m venv venv; \
+	source venv/bin/activate; $(MAKE) dev-install
+
+dev-install:
+	python -m pip install --upgrade pip
+	if [ -f requirements_dev.txt ]; then pip install -r requirements_dev.txt; fi
+	python setup.py install
+
 lint: ## check style with flake8
 	flake8 minos tests
 
@@ -61,8 +68,7 @@ test-all: ## run tests on every Python version with tox
 coverage: ## check code coverage quickly with the default Python
 	coverage run --source minos -m pytest
 	coverage report -m
-	coverage html
-	$(BROWSER) htmlcov/index.html
+	coverage xml
 
 docs: ## generate Sphinx HTML documentation, including API docs
 	rm -f docs/api_gateway_common.rst
@@ -76,7 +82,7 @@ servedocs: docs ## compile the docs watching for changes
 	watchmedo shell-command -p '*.rst' -c '$(MAKE) -C docs html' -R -D .
 
 release: dist ## package and upload a release
-	twine upload --repository-url $(aws_repo_url) --username aws --password $(aws_password) dist/*
+	twine upload dist/*
 
 dist: clean ## builds source and wheel package
 	python setup.py sdist
