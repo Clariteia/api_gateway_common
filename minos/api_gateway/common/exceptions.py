@@ -61,7 +61,8 @@ class MinosRepositoryManuallySetAggregateIdException(MinosRepositoryException):
     """Exception to be raised when some aggregate is trying to be created with a manually set id."""
 
 
-class MinosRepositoryManuallySetAggregateVersionException(MinosRepositoryException):
+class MinosRepositoryManuallySetAggregateVersionException(
+        MinosRepositoryException):
     """Exception to be raised when some aggregate is trying to be created with a manually set version."""
 
 
@@ -105,15 +106,13 @@ class MinosReqAttributeException(MinosModelAttributeException):
 
 class MinosTypeAttributeException(MinosModelAttributeException):
     """Exception to be raised when there are any mismatching between the expected and observed attribute type."""
-
     def __init__(self, name: str, target_type: Type, value: Any):
         self.name = name
         self.target_type = target_type
         self.value = value
         super().__init__(
             f"The {repr(target_type)} expected type for {repr(name)} does not match with "
-            f"the given data type: {type(value)}"
-        )
+            f"the given data type: {type(value)}")
 
 
 class MinosMalformedAttributeException(MinosModelAttributeException):
@@ -124,7 +123,6 @@ class MinosMalformedAttributeException(MinosModelAttributeException):
 
 class MinosParseAttributeException(MinosModelAttributeException):
     """Exception to be raised when there are any kind of problems with the parsing logic."""
-
     def __init__(self, name: str, value: Any, exception: Exception):
         self.name = name
         self.value = value
@@ -136,7 +134,6 @@ class MinosParseAttributeException(MinosModelAttributeException):
 
 class MinosAttributeValidationException(MinosModelAttributeException):
     """Exception to be raised when some fields are not valid."""
-
     def __init__(self, name: str, value: Any):
         self.name = name
         self.value = value
