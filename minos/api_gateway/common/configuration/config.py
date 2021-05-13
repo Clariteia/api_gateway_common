@@ -27,15 +27,28 @@ from minos.api_gateway.common.exceptions import (
 CONNECTION = collections.namedtuple("Connection", "host port")
 ENDPOINT = collections.namedtuple("Endpoint", "name route method controller action")
 REST = collections.namedtuple("Rest", "connection endpoints")
+DISCOVERY_CONNECTION = collections.namedtuple("DiscoveryConnection", "host port path")
+DATABASE = collections.namedtuple("Database", "host port password")
+DISCOVERY = collections.namedtuple("Discovery", "connection endpoints database")
 
 _ENVIRONMENT_MAPPER = {
     "rest.host": "API_GATEWAY_REST_HOST",
     "rest.port": "API_GATEWAY_REST_PORT",
+    "discovery.host": "DISCOVERY_SERVICE_HOST",
+    "discovery.port": "DISCOVERY_SERVICE_PORT",
+    "discovery.db.host": "DISCOVERY_SERVICE_DB_HOST",
+    "discovery.db.port": "DISCOVERY_SERVICE_DB_PORT",
+    "discovery.db.password": "DISCOVERY_SERVICE_DB_PASSWORD",
 }
 
 _PARAMETERIZED_MAPPER = {
     "rest.host": "api_gateway_rest_host",
     "rest.port": "api_gateway_rest_port",
+    "discovery.host": "discovery_service_host",
+    "discovery.port": "discovery_service_port",
+    "discovery.db.host": "discovery_service_db_host",
+    "discovery.db.port": "discovery_service_db_port",
+    "discovery.db.password": "discovery_service_db_password",
 }
 
 _default: t.Optional[MinosConfigAbstract] = None
@@ -55,11 +68,11 @@ class MinosConfigAbstract(abc.ABC):
 
     @abc.abstractmethod
     def _load(self, path: str) -> None:
-        raise NotImplementedError
+        raise NotImplementedError  # pragma: no cover
 
     @abc.abstractmethod
     def _get(self, key: str, **kwargs: t.Any):
-        raise NotImplementedError
+        raise NotImplementedError  # pragma: no cover
 
     @staticmethod
     def _file_exit(path: str) -> bool:
@@ -82,7 +95,9 @@ class MinosConfigAbstract(abc.ABC):
         :return: This method does not return anything.
         """
         if MinosConfigAbstract.get_default() is not None:
-            raise MinosConfigDefaultAlreadySetException("There is already another config set as default.")
+            raise MinosConfigDefaultAlreadySetException(
+                "There is already another config set as default."
+            )
         global _default
         _default = value
 
@@ -110,7 +125,9 @@ class MinosConfig(MinosConfigAbstract):
 
     __slots__ = ("_data", "_with_environment", "_parameterized")
 
-    def __init__(self, path: t.Union[Path, str], with_environment: bool = True, **kwargs):
+    def __init__(
+        self, path: t.Union[Path, str], with_environment: bool = True, **kwargs
+    ):
         super().__init__(path)
         self._with_environment = with_environment
         self._parameterized = kwargs
@@ -123,10 +140,17 @@ class MinosConfig(MinosConfigAbstract):
             raise MinosConfigException(f"Check if this path: {path} is correct")
 
     def _get(self, key: str, **kwargs: t.Any) -> t.Any:
-        if key in _PARAMETERIZED_MAPPER and _PARAMETERIZED_MAPPER[key] in self._parameterized:
+        if (
+            key in _PARAMETERIZED_MAPPER
+            and _PARAMETERIZED_MAPPER[key] in self._parameterized
+        ):
             return self._parameterized[_PARAMETERIZED_MAPPER[key]]
 
-        if self._with_environment and key in _ENVIRONMENT_MAPPER and _ENVIRONMENT_MAPPER[key] in os.environ:
+        if (
+            self._with_environment
+            and key in _ENVIRONMENT_MAPPER
+            and _ENVIRONMENT_MAPPER[key] in os.environ
+        ):
             return os.environ[_ENVIRONMENT_MAPPER[key]]
 
         def _fn(k: str, data: dict[str, t.Any]) -> t.Any:
@@ -144,15 +168,17 @@ class MinosConfig(MinosConfigAbstract):
     def rest(self) -> REST:
         """Get the rest config.
 
-         :return: A ``REST`` NamedTuple instance.
-         """
+        :return: A ``REST`` NamedTuple instance.
+        """
         connection = self._rest_connection
         endpoints = self._rest_endpoints
         return REST(connection=connection, endpoints=endpoints)
 
     @property
     def _rest_connection(self):
-        connection = CONNECTION(host=self._get("rest.host"), port=int(self._get("rest.port")))
+        connection = CONNECTION(
+            host=self._get("rest.host"), port=int(self._get("rest.port"))
+        )
         return connection
 
     @property
@@ -171,3 +197,45 @@ class MinosConfig(MinosConfigAbstract):
             action=endpoint["action"],
         )
 
+    @property
+    def discovery(self) -> DISCOVERY:
+        """Get the rest config.
+
+        :return: A ``REST`` NamedTuple instance.
+        """
+        connection = self._discovery_connection
+        endpoints = self._discovery_endpoints
+        database = self._discovery_database
+        return DISCOVERY(connection=connection, endpoints=endpoints, database=database)
+
+    @property
+    def _discovery_connection(self):
+        connection = CONNECTION(
+            host=self._get("discovery.host"), port=int(self._get("discovery.port"))
+        )
+        return connection
+
+    @property
+    def _discovery_database(self):
+        connection = DATABASE(
+            host=self._get("discovery.db.host"),
+            port=int(self._get("discovery.db.port")),
+            password=self._get("discovery.db.password"),
+        )
+        return connection
+
+    @property
+    def _discovery_endpoints(self) -> list[ENDPOINT]:
+        info = self._get("discovery.endpoints")
+        endpoints = [self._discovery_endpoints_entry(endpoint) for endpoint in info]
+        return endpoints
+
+    @staticmethod
+    def _discovery_endpoints_entry(endpoint: dict[str, t.Any]) -> ENDPOINT:
+        return ENDPOINT(
+            name=endpoint["name"],
+            route=endpoint["route"],
+            method=endpoint["method"].upper(),
+            controller=endpoint["controller"],
+            action=endpoint["action"],
+        )
