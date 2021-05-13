@@ -25,14 +25,11 @@ from minos.api_gateway.common.exceptions import (
 )
 
 CONNECTION = collections.namedtuple("Connection", "host port")
-ENDPOINT = collections.namedtuple(
-    "Endpoint", "name route method controller action")
+ENDPOINT = collections.namedtuple("Endpoint", "name route method controller action")
 REST = collections.namedtuple("Rest", "connection endpoints")
-DISCOVERY_CONNECTION = collections.namedtuple(
-    "DiscoveryConnection", "host port path")
+DISCOVERY_CONNECTION = collections.namedtuple("DiscoveryConnection", "host port path")
 DATABASE = collections.namedtuple("Database", "host port password")
-DISCOVERY = collections.namedtuple(
-    "Discovery", "connection endpoints database")
+DISCOVERY = collections.namedtuple("Discovery", "connection endpoints database")
 
 _ENVIRONMENT_MAPPER = {
     "rest.host": "API_GATEWAY_REST_HOST",
@@ -140,8 +137,7 @@ class MinosConfig(MinosConfigAbstract):
             with open(path) as f:
                 self._data = yaml.load(f, Loader=yaml.FullLoader)
         else:
-            raise MinosConfigException(
-                f"Check if this path: {path} is correct")
+            raise MinosConfigException(f"Check if this path: {path} is correct")
 
     def _get(self, key: str, **kwargs: t.Any) -> t.Any:
         if (
@@ -231,8 +227,7 @@ class MinosConfig(MinosConfigAbstract):
     @property
     def _discovery_endpoints(self) -> list[ENDPOINT]:
         info = self._get("discovery.endpoints")
-        endpoints = [self._discovery_endpoints_entry(
-            endpoint) for endpoint in info]
+        endpoints = [self._discovery_endpoints_entry(endpoint) for endpoint in info]
         return endpoints
 
     @staticmethod

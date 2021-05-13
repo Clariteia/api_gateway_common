@@ -73,7 +73,7 @@ class TestMinosConfig(unittest.TestCase):
     def test_overwrite_with_environment_discovery_db_host(self):
         config = MinosConfig(path=self.config_file_path)
         conn = config.discovery.database
-        self.assertEqual('::1', conn.host)
+        self.assertEqual("::1", conn.host)
 
     @mock.patch.dict(os.environ, {"DISCOVERY_SERVICE_DB_PORT": "3030"})
     def test_overwrite_with_environment_discovery_db_port(self):
@@ -81,11 +81,11 @@ class TestMinosConfig(unittest.TestCase):
         conn = config.discovery.database
         self.assertEqual(3030, conn.port)
 
-    @mock.patch.dict(os.environ, {"DISCOVERY_SERVICE_DB_PASSWORD": '1234'})
+    @mock.patch.dict(os.environ, {"DISCOVERY_SERVICE_DB_PASSWORD": "1234"})
     def test_overwrite_with_environment_discovery_db_password(self):
         config = MinosConfig(path=self.config_file_path)
         conn = config.discovery.database
-        self.assertEqual('1234', conn.password)
+        self.assertEqual("1234", conn.password)
 
     @mock.patch.dict(os.environ, {"API_GATEWAY_REST_HOST": "::1"})
     def test_overwrite_with_environment(self):
@@ -95,14 +95,12 @@ class TestMinosConfig(unittest.TestCase):
 
     @mock.patch.dict(os.environ, {"API_GATEWAY_REST_HOST": "::1"})
     def test_overwrite_with_environment_false(self):
-        config = MinosConfig(path=self.config_file_path,
-                             with_environment=False)
+        config = MinosConfig(path=self.config_file_path, with_environment=False)
         rest = config.rest
         self.assertEqual("localhost", rest.connection.host)
 
     def test_overwrite_with_parameter(self):
-        config = MinosConfig(path=self.config_file_path,
-                             api_gateway_rest_host="::1")
+        config = MinosConfig(path=self.config_file_path, api_gateway_rest_host="::1")
         rest = config.rest
         self.assertEqual("::1", rest.connection.host)
 
