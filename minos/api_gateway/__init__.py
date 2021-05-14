@@ -9,30 +9,18 @@ Minos framework can not be copied and/or distributed without the express permiss
 __version__ = "0.0.1"
 
 from minos.api_gateway.common.exceptions import (
-    EmptyMinosModelSequenceException,
-    MinosAttributeValidationException,
-    MinosConfigDefaultAlreadySetException,
-    MinosConfigException,
-    MinosException,
-    MinosImportException,
-    MinosMalformedAttributeException,
-    MinosMessageException,
-    MinosModelAttributeException,
-    MinosModelException,
-    MinosParseAttributeException,
-    MinosProtocolException,
+    EmptyMinosModelSequenceException, MinosAttributeValidationException,
+    MinosConfigDefaultAlreadySetException, MinosConfigException,
+    MinosException, MinosImportException, MinosMalformedAttributeException,
+    MinosMessageException, MinosModelAttributeException, MinosModelException,
+    MinosParseAttributeException, MinosProtocolException,
     MinosRepositoryAggregateNotFoundException,
-    MinosRepositoryDeletedAggregateException,
-    MinosRepositoryException,
+    MinosRepositoryDeletedAggregateException, MinosRepositoryException,
     MinosRepositoryManuallySetAggregateIdException,
     MinosRepositoryManuallySetAggregateVersionException,
-    MinosRepositoryNonProvidedException,
-    MinosRepositoryUnknownActionException,
-    MinosReqAttributeException,
-    MinosTypeAttributeException,
-    MultiTypeMinosModelSequenceException,
-)
+    MinosRepositoryNonProvidedException, MinosRepositoryUnknownActionException,
+    MinosReqAttributeException, MinosTypeAttributeException,
+    MultiTypeMinosModelSequenceException)
 
-from .common import ENDPOINT, REST, MinosConfig, MinosConfigAbstract
-
-from .common import ClientHttp
+from .common import (ENDPOINT, REST, ClientHttp, MinosConfig,
+                     MinosConfigAbstract)
