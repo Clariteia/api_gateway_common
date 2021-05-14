@@ -24,3 +24,7 @@ from minos.api_gateway.common.exceptions import MinosRepositoryUnknownActionExce
 from minos.api_gateway.common.exceptions import MinosReqAttributeException
 from minos.api_gateway.common.exceptions import MinosTypeAttributeException
 from minos.api_gateway.common.exceptions import MultiTypeMinosModelSequenceException
+
+from .client import (
+    ClientHttp
+)
