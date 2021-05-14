@@ -7,7 +7,8 @@ Minos framework can not be copied and/or distributed without the express permiss
 """
 
 from abc import (
-    ABC, abstractmethod,
+    ABC,
+    abstractmethod,
 )
 from typing import (
     Any,
@@ -16,6 +17,7 @@ from typing import (
 
 class ClientHttpBase(ABC):  # pragma: no cover
     """Minos abstract HTTP client class."""
+
     @abstractmethod
     async def get(self, url, params: dict = None, **kwargs: Any):
         pass

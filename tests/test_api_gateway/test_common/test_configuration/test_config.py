@@ -89,14 +89,12 @@ class TestMinosConfig(unittest.TestCase):
 
     @mock.patch.dict(os.environ, {"API_GATEWAY_REST_HOST": "::1"})
     def test_overwrite_with_environment_false(self):
-        config = MinosConfig(path=self.config_file_path,
-                             with_environment=False)
+        config = MinosConfig(path=self.config_file_path, with_environment=False)
         rest = config.rest
         self.assertEqual("localhost", rest.connection.host)
 
     def test_overwrite_with_parameter(self):
-        config = MinosConfig(path=self.config_file_path,
-                             api_gateway_rest_host="::1")
+        config = MinosConfig(path=self.config_file_path, api_gateway_rest_host="::1")
         rest = config.rest
         self.assertEqual("::1", rest.connection.host)
 
