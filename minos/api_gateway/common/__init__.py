@@ -1,3 +1,4 @@
+from .client import ClientHttp
 from .configuration import ENDPOINT
 from .configuration import MinosConfig
 from .configuration import MinosConfigAbstract

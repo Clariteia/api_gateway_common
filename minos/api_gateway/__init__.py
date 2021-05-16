@@ -22,4 +22,5 @@ from minos.api_gateway.common.exceptions import (
     MinosReqAttributeException, MinosTypeAttributeException,
     MultiTypeMinosModelSequenceException)
 
-from .common import ENDPOINT, REST, MinosConfig, MinosConfigAbstract
+from .common import (ENDPOINT, REST, ClientHttp, MinosConfig,
+                     MinosConfigAbstract)
