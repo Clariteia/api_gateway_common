@@ -4,7 +4,6 @@
 #
 # Minos framework can not be copied and/or distributed without the express
 # permission of Clariteia SL.
-
 import typing as t
 
 from aiohttp import web

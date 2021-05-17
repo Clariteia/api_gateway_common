@@ -9,9 +9,10 @@ import os
 import unittest
 from unittest import mock
 
-from minos.api_gateway.common import (MinosConfig, MinosConfigAbstract,
-                                      MinosConfigDefaultAlreadySetException,
-                                      MinosConfigException)
+from minos.api_gateway.common import MinosConfig
+from minos.api_gateway.common import MinosConfigAbstract
+from minos.api_gateway.common import MinosConfigDefaultAlreadySetException
+from minos.api_gateway.common import MinosConfigException
 from tests.utils import BASE_PATH
 
 

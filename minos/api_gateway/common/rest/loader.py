@@ -4,7 +4,6 @@
 #
 # Minos framework can not be copied and/or distributed without the express
 # permission of Clariteia SL.
-
 from aiohttp import web
 
 from ..importlib import import_module
