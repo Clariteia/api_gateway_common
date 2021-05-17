@@ -10,8 +10,12 @@ from tests.utils import BASE_PATH
 
 
 class TestRestService(RESTService):
-    def __init__(self, address: str, port: int, endpoints: dict, **kwds: t.Any):
-        super().__init__(address=address, port=port, endpoints=endpoints, **kwds)
+    def __init__(self, address: str, port: int, endpoints: dict,
+                 **kwds: t.Any):
+        super().__init__(address=address,
+                         port=port,
+                         endpoints=endpoints,
+                         **kwds)
 
 
 class TestRestInterfaceService(AioHTTPTestCase):

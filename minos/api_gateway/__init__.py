@@ -8,23 +8,18 @@ Minos framework can not be copied and/or distributed without the express permiss
 
 __version__ = "0.0.1"
 
-from .common import (ENDPOINT, REST, ClientHttp,
-                     EmptyMinosModelSequenceException,
-                     MinosAttributeValidationException, MinosConfig,
-                     MinosConfigAbstract,
-                     MinosConfigDefaultAlreadySetException,
-                     MinosConfigException, MinosException,
-                     MinosImportException, MinosMalformedAttributeException,
-                     MinosMessageException, MinosModelAttributeException,
-                     MinosModelException, MinosParseAttributeException,
-                     MinosProtocolException,
-                     MinosRepositoryAggregateNotFoundException,
-                     MinosRepositoryDeletedAggregateException,
-                     MinosRepositoryException,
-                     MinosRepositoryManuallySetAggregateIdException,
-                     MinosRepositoryManuallySetAggregateVersionException,
-                     MinosRepositoryNonProvidedException,
-                     MinosRepositoryUnknownActionException,
-                     MinosReqAttributeException, MinosTypeAttributeException,
-                     MultiTypeMinosModelSequenceException, RestRoutesLoader,
-                     RESTService, classname, import_module)
+from .common import (
+    ENDPOINT, REST, ClientHttp, EmptyMinosModelSequenceException,
+    MinosAttributeValidationException, MinosConfig, MinosConfigAbstract,
+    MinosConfigDefaultAlreadySetException, MinosConfigException,
+    MinosException, MinosImportException, MinosMalformedAttributeException,
+    MinosMessageException, MinosModelAttributeException, MinosModelException,
+    MinosParseAttributeException, MinosProtocolException,
+    MinosRepositoryAggregateNotFoundException,
+    MinosRepositoryDeletedAggregateException, MinosRepositoryException,
+    MinosRepositoryManuallySetAggregateIdException,
+    MinosRepositoryManuallySetAggregateVersionException,
+    MinosRepositoryNonProvidedException, MinosRepositoryUnknownActionException,
+    MinosReqAttributeException, MinosTypeAttributeException,
+    MultiTypeMinosModelSequenceException, RestRoutesLoader, RESTService,
+    classname, import_module)

@@ -33,7 +33,8 @@ setup(
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
     ],
-    description="Minos Boilerplate contains all the boilerplate you need to create a Minos Python package.",
+    description=
+    "Minos Boilerplate contains all the boilerplate you need to create a Minos Python package.",
     install_requires=requirements,
     long_description_content_type="text/markdown",
     long_description=readme + "\n\n" + history,
