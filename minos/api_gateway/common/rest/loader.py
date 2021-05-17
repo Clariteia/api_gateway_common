@@ -8,9 +8,7 @@
 from aiohttp import (
     web,
 )
-from ..importlib import (
-    import_module
-)
+from ..importlib import import_module
 
 
 class RestRoutesLoader:

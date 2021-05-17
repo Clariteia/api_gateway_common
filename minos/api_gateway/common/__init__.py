@@ -17,11 +17,17 @@ from minos.api_gateway.common.exceptions import MinosModelAttributeException
 from minos.api_gateway.common.exceptions import MinosModelException
 from minos.api_gateway.common.exceptions import MinosParseAttributeException
 from minos.api_gateway.common.exceptions import MinosProtocolException
-from minos.api_gateway.common.exceptions import MinosRepositoryAggregateNotFoundException
+from minos.api_gateway.common.exceptions import (
+    MinosRepositoryAggregateNotFoundException,
+)
 from minos.api_gateway.common.exceptions import MinosRepositoryDeletedAggregateException
 from minos.api_gateway.common.exceptions import MinosRepositoryException
-from minos.api_gateway.common.exceptions import MinosRepositoryManuallySetAggregateIdException
-from minos.api_gateway.common.exceptions import MinosRepositoryManuallySetAggregateVersionException
+from minos.api_gateway.common.exceptions import (
+    MinosRepositoryManuallySetAggregateIdException,
+)
+from minos.api_gateway.common.exceptions import (
+    MinosRepositoryManuallySetAggregateVersionException,
+)
 from minos.api_gateway.common.exceptions import MinosRepositoryNonProvidedException
 from minos.api_gateway.common.exceptions import MinosRepositoryUnknownActionException
 from minos.api_gateway.common.exceptions import MinosReqAttributeException

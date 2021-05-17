@@ -61,8 +61,7 @@ class MinosRepositoryManuallySetAggregateIdException(MinosRepositoryException):
     """Exception to be raised when some aggregate is trying to be created with a manually set id."""
 
 
-class MinosRepositoryManuallySetAggregateVersionException(
-        MinosRepositoryException):
+class MinosRepositoryManuallySetAggregateVersionException(MinosRepositoryException):
     """Exception to be raised when some aggregate is trying to be created with a manually set version."""
 
 
@@ -113,7 +112,8 @@ class MinosTypeAttributeException(MinosModelAttributeException):
         self.value = value
         super().__init__(
             f"The {repr(target_type)} expected type for {repr(name)} does not match with "
-            f"the given data type: {type(value)}")
+            f"the given data type: {type(value)}"
+        )
 
 
 class MinosMalformedAttributeException(MinosModelAttributeException):

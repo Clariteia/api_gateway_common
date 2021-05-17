@@ -15,8 +15,9 @@ from minos.api_gateway import MinosImportException
 class TestImportlib(unittest.TestCase):
     def test_import_module(self):
         object_class = import_module("tests.ImportedModule.ImportedClassTest")
-        self.assertEqual("tests.ImportedModule.ImportedClassTest",
-                         classname(object_class))
+        self.assertEqual(
+            "tests.ImportedModule.ImportedClassTest", classname(object_class)
+        )
 
     def test_not_callable_module(self):
         with self.assertRaises(TypeError) as context:
