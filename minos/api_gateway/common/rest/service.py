@@ -7,15 +7,12 @@
 import typing as t
 
 from aiohttp import (
-    web,
-)
+    web, )
 from aiomisc.service.aiohttp import (
-    AIOHTTPService,
-)
+    AIOHTTPService, )
 
 from .loader import (
-    RestRoutesLoader,
-)
+    RestRoutesLoader, )
 
 
 class RESTService(AIOHTTPService):
@@ -25,15 +22,12 @@ class RESTService(AIOHTTPService):
     Expose REST Interface handler using aiomisc AIOHTTPService.
 
     """
-
-    def __init__(
-        self,
-        address: str,
-        port: int,
-        endpoints: dict,
-        app: web.Application = web.Application(),
-        **kwds: t.Any
-    ):
+    def __init__(self,
+                 address: str,
+                 port: int,
+                 endpoints: dict,
+                 app: web.Application = web.Application(),
+                 **kwds: t.Any):
         address = address
         port = port
         super().__init__(address=address, port=port, **kwds)

@@ -15,8 +15,7 @@ import os
 import sys
 
 from minos.api_gateway import (
-    common,
-)
+    common, )
 # If extensions (or modules to document with autodoc) are in another
 # directory, add these directories to sys.path here. If the directory is
 # relative to the documentation root, use os.path.abspath to make it
@@ -24,7 +23,6 @@ from minos.api_gateway import (
 #
 
 sys.path.insert(0, os.path.abspath(".."))
-
 
 # -- General configuration ---------------------------------------------
 
@@ -80,7 +78,6 @@ pygments_style = "sphinx"
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = False
 
-
 # -- Options for HTML output -------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
@@ -99,12 +96,10 @@ html_theme = "alabaster"
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
 
-
 # -- Options for HTMLHelp output ---------------------------------------
 
 # Output file base name for HTML help builder.
 htmlhelp_basename = "minosdoc"
-
 
 # -- Options for LaTeX output ------------------------------------------
 
@@ -136,13 +131,12 @@ latex_documents = [
     ),
 ]
 
-
 # -- Options for manual page output ------------------------------------
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
-man_pages = [(master_doc, "minos", "API Gateway Common Documentation", [author], 1)]
-
+man_pages = [(master_doc, "minos", "API Gateway Common Documentation",
+              [author], 1)]
 
 # -- Options for Texinfo output ----------------------------------------
 

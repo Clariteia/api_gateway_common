@@ -33,8 +33,7 @@ from minos.api_gateway.common.exceptions import (
 )
 
 from .client import (
-    ClientHttp,
-)
+    ClientHttp, )
 from .configuration import (
     ENDPOINT,
     REST,
