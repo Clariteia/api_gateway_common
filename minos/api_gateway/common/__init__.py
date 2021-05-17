@@ -3,6 +3,8 @@ from .configuration import ENDPOINT
 from .configuration import MinosConfig
 from .configuration import MinosConfigAbstract
 from .configuration import REST
+from .importlib import classname
+from .importlib import import_module
 from minos.api_gateway.common.exceptions import EmptyMinosModelSequenceException
 from minos.api_gateway.common.exceptions import MinosAttributeValidationException
 from minos.api_gateway.common.exceptions import MinosConfigDefaultAlreadySetException
@@ -25,4 +27,3 @@ from minos.api_gateway.common.exceptions import MinosRepositoryUnknownActionExce
 from minos.api_gateway.common.exceptions import MinosReqAttributeException
 from minos.api_gateway.common.exceptions import MinosTypeAttributeException
 from minos.api_gateway.common.exceptions import MultiTypeMinosModelSequenceException
-from .importlib import import_module, classname

@@ -5,15 +5,12 @@ This file is part of minos framework.
 
 Minos framework can not be copied and/or distributed without the express permission of Clariteia SL.
 """
-
 import importlib
 import typing as t
 
 import six
 
-from .exceptions import (
-    MinosImportException,
-)
+from .exceptions import MinosImportException
 
 
 def import_module(module: str) -> t.Type:
