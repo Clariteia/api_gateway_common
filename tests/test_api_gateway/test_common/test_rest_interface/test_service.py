@@ -1,23 +1,21 @@
-from aiohttp.test_utils import (
-    AioHTTPTestCase,
-    unittest_run_loop,
-)
 import typing as t
-from minos.api_gateway.common import (
-    MinosConfig,
-    RESTService
-)
-from tests.utils import (
-    BASE_PATH,
-)
-from aiohttp import (
-    web,
-)
+
+from aiohttp import web
+from aiohttp.test_utils import AioHTTPTestCase
+from aiohttp.test_utils import unittest_run_loop
+
+from minos.api_gateway.common import MinosConfig
+from minos.api_gateway.common import RESTService
+from tests.utils import BASE_PATH
 
 
 class TestRestService(RESTService):
-    def __init__(self, address: str, port: int, endpoints: dict, **kwds: t.Any):
-        super().__init__(address=address, port=port, endpoints=endpoints, **kwds)
+    def __init__(self, address: str, port: int, endpoints: dict,
+                 **kwds: t.Any):
+        super().__init__(address=address,
+                         port=port,
+                         endpoints=endpoints,
+                         **kwds)
 
 
 class TestRestInterfaceService(AioHTTPTestCase):
@@ -29,7 +27,12 @@ class TestRestInterfaceService(AioHTTPTestCase):
         """
         app = web.Application()
         config = MinosConfig(self.CONFIG_FILE_PATH)
-        rest_interface = RESTService(address=config.rest.connection.host, port=config.rest.connection.port, endpoints=config.rest.endpoints, app=app)
+        rest_interface = RESTService(
+            address=config.rest.connection.host,
+            port=config.rest.connection.port,
+            endpoints=config.rest.endpoints,
+            app=app,
+        )
 
         return await rest_interface.create_application()
 
@@ -55,7 +58,11 @@ class TestCustomRestInterfaceService(AioHTTPTestCase):
         Override the get_app method to return your application.
         """
         config = MinosConfig(self.CONFIG_FILE_PATH)
-        rest_interface = TestRestService(address=config.rest.connection.host, port=config.rest.connection.port, endpoints=config.rest.endpoints)
+        rest_interface = TestRestService(
+            address=config.rest.connection.host,
+            port=config.rest.connection.port,
+            endpoints=config.rest.endpoints,
+        )
 
         return await rest_interface.create_application()
 

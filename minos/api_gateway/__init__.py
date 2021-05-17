@@ -9,7 +9,8 @@ Minos framework can not be copied and/or distributed without the express permiss
 __version__ = "0.0.1"
 
 from .common import (
-    EmptyMinosModelSequenceException, MinosAttributeValidationException,
+    ENDPOINT, REST, ClientHttp, EmptyMinosModelSequenceException,
+    MinosAttributeValidationException, MinosConfig, MinosConfigAbstract,
     MinosConfigDefaultAlreadySetException, MinosConfigException,
     MinosException, MinosImportException, MinosMalformedAttributeException,
     MinosMessageException, MinosModelAttributeException, MinosModelException,
@@ -20,5 +21,5 @@ from .common import (
     MinosRepositoryManuallySetAggregateVersionException,
     MinosRepositoryNonProvidedException, MinosRepositoryUnknownActionException,
     MinosReqAttributeException, MinosTypeAttributeException,
-    MultiTypeMinosModelSequenceException, ENDPOINT, REST, ClientHttp, MinosConfig,
-    MinosConfigAbstract, classname, import_module, RESTService, RestRoutesLoader)
+    MultiTypeMinosModelSequenceException, RestRoutesLoader, RESTService,
+    classname, import_module)

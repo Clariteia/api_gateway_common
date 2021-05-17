@@ -4,18 +4,12 @@
 #
 # Minos framework can not be copied and/or distributed without the express
 # permission of Clariteia SL.
-
 import typing as t
 
-from aiomisc.service.aiohttp import (
-    AIOHTTPService,
-)
-from .loader import (
-    RestRoutesLoader,
-)
-from aiohttp import (
-    web,
-)
+from aiohttp import web
+from aiomisc.service.aiohttp import AIOHTTPService
+
+from .loader import RestRoutesLoader
 
 
 class RESTService(AIOHTTPService):
@@ -25,8 +19,12 @@ class RESTService(AIOHTTPService):
     Expose REST Interface handler using aiomisc AIOHTTPService.
 
     """
-
-    def __init__(self, address: str, port: int, endpoints: dict, app: web.Application = web.Application(), **kwds: t.Any):
+    def __init__(self,
+                 address: str,
+                 port: int,
+                 endpoints: dict,
+                 app: web.Application = web.Application(),
+                 **kwds: t.Any):
         address = address
         port = port
         super().__init__(address=address, port=port, **kwds)
