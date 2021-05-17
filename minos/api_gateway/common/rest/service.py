@@ -27,7 +27,12 @@ class RESTService(AIOHTTPService):
     """
 
     def __init__(
-        self, address: str, port: int, endpoints: dict, app: web.Application = web.Application(), **kwds: t.Any
+        self,
+        address: str,
+        port: int,
+        endpoints: dict,
+        app: web.Application = web.Application(),
+        **kwds: t.Any
     ):
         address = address
         port = port

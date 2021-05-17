@@ -95,7 +95,9 @@ class MinosConfigAbstract(abc.ABC):
         :return: This method does not return anything.
         """
         if MinosConfigAbstract.get_default() is not None:
-            raise MinosConfigDefaultAlreadySetException("There is already another config set as default.")
+            raise MinosConfigDefaultAlreadySetException(
+                "There is already another config set as default."
+            )
         global _default
         _default = value
 
@@ -123,7 +125,9 @@ class MinosConfig(MinosConfigAbstract):
 
     __slots__ = ("_data", "_with_environment", "_parameterized")
 
-    def __init__(self, path: t.Union[Path, str], with_environment: bool = True, **kwargs):
+    def __init__(
+        self, path: t.Union[Path, str], with_environment: bool = True, **kwargs
+    ):
         super().__init__(path)
         self._with_environment = with_environment
         self._parameterized = kwargs
@@ -136,10 +140,17 @@ class MinosConfig(MinosConfigAbstract):
             raise MinosConfigException(f"Check if this path: {path} is correct")
 
     def _get(self, key: str, **kwargs: t.Any) -> t.Any:
-        if key in _PARAMETERIZED_MAPPER and _PARAMETERIZED_MAPPER[key] in self._parameterized:
+        if (
+            key in _PARAMETERIZED_MAPPER
+            and _PARAMETERIZED_MAPPER[key] in self._parameterized
+        ):
             return self._parameterized[_PARAMETERIZED_MAPPER[key]]
 
-        if self._with_environment and key in _ENVIRONMENT_MAPPER and _ENVIRONMENT_MAPPER[key] in os.environ:
+        if (
+            self._with_environment
+            and key in _ENVIRONMENT_MAPPER
+            and _ENVIRONMENT_MAPPER[key] in os.environ
+        ):
             return os.environ[_ENVIRONMENT_MAPPER[key]]
 
         def _fn(k: str, data: dict[str, t.Any]) -> t.Any:
@@ -165,7 +176,9 @@ class MinosConfig(MinosConfigAbstract):
 
     @property
     def _rest_connection(self):
-        connection = CONNECTION(host=self._get("rest.host"), port=int(self._get("rest.port")))
+        connection = CONNECTION(
+            host=self._get("rest.host"), port=int(self._get("rest.port"))
+        )
         return connection
 
     @property
@@ -197,7 +210,9 @@ class MinosConfig(MinosConfigAbstract):
 
     @property
     def _discovery_connection(self):
-        connection = CONNECTION(host=self._get("discovery.host"), port=int(self._get("discovery.port")))
+        connection = CONNECTION(
+            host=self._get("discovery.host"), port=int(self._get("discovery.port"))
+        )
         return connection
 
     @property
