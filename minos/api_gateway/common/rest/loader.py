@@ -52,5 +52,3 @@ class RestRoutesLoader:
         :return: A `web.Application` instance.
         """
         return self._app
-
-

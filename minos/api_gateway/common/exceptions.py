@@ -106,6 +106,7 @@ class MinosReqAttributeException(MinosModelAttributeException):
 
 class MinosTypeAttributeException(MinosModelAttributeException):
     """Exception to be raised when there are any mismatching between the expected and observed attribute type."""
+
     def __init__(self, name: str, target_type: Type, value: Any):
         self.name = name
         self.target_type = target_type
@@ -123,6 +124,7 @@ class MinosMalformedAttributeException(MinosModelAttributeException):
 
 class MinosParseAttributeException(MinosModelAttributeException):
     """Exception to be raised when there are any kind of problems with the parsing logic."""
+
     def __init__(self, name: str, value: Any, exception: Exception):
         self.name = name
         self.value = value
@@ -134,6 +136,7 @@ class MinosParseAttributeException(MinosModelAttributeException):
 
 class MinosAttributeValidationException(MinosModelAttributeException):
     """Exception to be raised when some fields are not valid."""
+
     def __init__(self, name: str, value: Any):
         self.name = name
         self.value = value

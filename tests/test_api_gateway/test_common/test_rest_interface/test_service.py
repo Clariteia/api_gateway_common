@@ -29,7 +29,8 @@ class TestRestInterfaceService(AioHTTPTestCase):
         """
         app = web.Application()
         config = MinosConfig(self.CONFIG_FILE_PATH)
-        rest_interface = RESTService(address=config.rest.connection.host, port=config.rest.connection.port, endpoints=config.rest.endpoints, app=app)
+        rest_interface = RESTService(address=config.rest.connection.host,
+                                     port=config.rest.connection.port, endpoints=config.rest.endpoints, app=app)
 
         return await rest_interface.create_application()
 
@@ -55,7 +56,8 @@ class TestCustomRestInterfaceService(AioHTTPTestCase):
         Override the get_app method to return your application.
         """
         config = MinosConfig(self.CONFIG_FILE_PATH)
-        rest_interface = TestRestService(address=config.rest.connection.host, port=config.rest.connection.port, endpoints=config.rest.endpoints)
+        rest_interface = TestRestService(
+            address=config.rest.connection.host, port=config.rest.connection.port, endpoints=config.rest.endpoints)
 
         return await rest_interface.create_application()
 
