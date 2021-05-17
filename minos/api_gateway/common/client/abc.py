@@ -8,51 +8,33 @@ Minos framework can not be copied and/or distributed without the express permiss
 from abc import ABC
 from abc import abstractmethod
 from typing import (
-    Any, )
+    Any,
+)
 
 
 class ClientHttpBase(ABC):  # pragma: no cover
     """Minos abstract HTTP client class."""
+
     @abstractmethod
     async def get(self, url, params: dict = None, **kwargs: Any):
         pass
 
     @abstractmethod
-    async def post(self,
-                   url,
-                   params: dict = None,
-                   data: Any = None,
-                   **kwargs: Any):
+    async def post(self, url, params: dict = None, data: Any = None, **kwargs: Any):
         pass
 
     @abstractmethod
-    async def put(self,
-                  url,
-                  params: dict = None,
-                  data: Any = None,
-                  **kwargs: Any):
+    async def put(self, url, params: dict = None, data: Any = None, **kwargs: Any):
         pass
 
     @abstractmethod
-    async def patch(self,
-                    url,
-                    params: dict = None,
-                    data: Any = None,
-                    **kwargs: Any):
+    async def patch(self, url, params: dict = None, data: Any = None, **kwargs: Any):
         pass
 
     @abstractmethod
-    async def delete(self,
-                     url,
-                     params: dict = None,
-                     data: Any = None,
-                     **kwargs: Any):
+    async def delete(self, url, params: dict = None, data: Any = None, **kwargs: Any):
         pass
 
     @staticmethod
-    async def _trigger_request(method,
-                               url,
-                               params,
-                               data: Any = None,
-                               **kwargs: Any):
+    async def _trigger_request(method, url, params, data: Any = None, **kwargs: Any):
         pass
