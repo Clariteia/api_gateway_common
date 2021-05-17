@@ -10,7 +10,9 @@ import typing as t
 
 import six
 
-from .exceptions import MinosImportException
+from .exceptions import (
+    MinosImportException,
+)
 
 
 def import_module(module: str) -> t.Type:
@@ -25,7 +27,7 @@ def import_module(module: str) -> t.Type:
         if not six.callable(kallable):
             raise TypeError("The module is not callable")
         return kallable
-    except ImportError as e:
+    except ImportError:
         raise MinosImportException("Error importing Package")
 
 

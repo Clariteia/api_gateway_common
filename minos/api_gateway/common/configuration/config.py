@@ -5,28 +5,31 @@ This file is part of minos framework.
 
 Minos framework can not be copied and/or distributed without the express permission of Clariteia SL.
 """
-from __future__ import annotations
+from __future__ import (
+    annotations,
+)
 
 import abc
 import collections
 import os
 import typing as t
-from pathlib import Path
+from pathlib import (
+    Path,
+)
 
 import yaml
 
-from minos.api_gateway.common.exceptions import MinosConfigDefaultAlreadySetException
-from minos.api_gateway.common.exceptions import MinosConfigException
+from minos.api_gateway.common.exceptions import (
+    MinosConfigDefaultAlreadySetException,
+    MinosConfigException,
+)
 
 CONNECTION = collections.namedtuple("Connection", "host port")
-ENDPOINT = collections.namedtuple("Endpoint",
-                                  "name route method controller action")
+ENDPOINT = collections.namedtuple("Endpoint", "name route method controller action")
 REST = collections.namedtuple("Rest", "connection endpoints")
-DISCOVERY_CONNECTION = collections.namedtuple("DiscoveryConnection",
-                                              "host port path")
+DISCOVERY_CONNECTION = collections.namedtuple("DiscoveryConnection", "host port path")
 DATABASE = collections.namedtuple("Database", "host port password")
-DISCOVERY = collections.namedtuple("Discovery",
-                                   "connection endpoints database")
+DISCOVERY = collections.namedtuple("Discovery", "connection endpoints database")
 
 _ENVIRONMENT_MAPPER = {
     "rest.host": "API_GATEWAY_REST_HOST",
@@ -92,8 +95,7 @@ class MinosConfigAbstract(abc.ABC):
         :return: This method does not return anything.
         """
         if MinosConfigAbstract.get_default() is not None:
-            raise MinosConfigDefaultAlreadySetException(
-                "There is already another config set as default.")
+            raise MinosConfigDefaultAlreadySetException("There is already another config set as default.")
         global _default
         _default = value
 
@@ -121,10 +123,7 @@ class MinosConfig(MinosConfigAbstract):
 
     __slots__ = ("_data", "_with_environment", "_parameterized")
 
-    def __init__(self,
-                 path: t.Union[Path, str],
-                 with_environment: bool = True,
-                 **kwargs):
+    def __init__(self, path: t.Union[Path, str], with_environment: bool = True, **kwargs):
         super().__init__(path)
         self._with_environment = with_environment
         self._parameterized = kwargs
@@ -134,16 +133,13 @@ class MinosConfig(MinosConfigAbstract):
             with open(path) as f:
                 self._data = yaml.load(f, Loader=yaml.FullLoader)
         else:
-            raise MinosConfigException(
-                f"Check if this path: {path} is correct")
+            raise MinosConfigException(f"Check if this path: {path} is correct")
 
     def _get(self, key: str, **kwargs: t.Any) -> t.Any:
-        if (key in _PARAMETERIZED_MAPPER
-                and _PARAMETERIZED_MAPPER[key] in self._parameterized):
+        if key in _PARAMETERIZED_MAPPER and _PARAMETERIZED_MAPPER[key] in self._parameterized:
             return self._parameterized[_PARAMETERIZED_MAPPER[key]]
 
-        if (self._with_environment and key in _ENVIRONMENT_MAPPER
-                and _ENVIRONMENT_MAPPER[key] in os.environ):
+        if self._with_environment and key in _ENVIRONMENT_MAPPER and _ENVIRONMENT_MAPPER[key] in os.environ:
             return os.environ[_ENVIRONMENT_MAPPER[key]]
 
         def _fn(k: str, data: dict[str, t.Any]) -> t.Any:
@@ -169,8 +165,7 @@ class MinosConfig(MinosConfigAbstract):
 
     @property
     def _rest_connection(self):
-        connection = CONNECTION(host=self._get("rest.host"),
-                                port=int(self._get("rest.port")))
+        connection = CONNECTION(host=self._get("rest.host"), port=int(self._get("rest.port")))
         return connection
 
     @property
@@ -198,14 +193,11 @@ class MinosConfig(MinosConfigAbstract):
         connection = self._discovery_connection
         endpoints = self._discovery_endpoints
         database = self._discovery_database
-        return DISCOVERY(connection=connection,
-                         endpoints=endpoints,
-                         database=database)
+        return DISCOVERY(connection=connection, endpoints=endpoints, database=database)
 
     @property
     def _discovery_connection(self):
-        connection = CONNECTION(host=self._get("discovery.host"),
-                                port=int(self._get("discovery.port")))
+        connection = CONNECTION(host=self._get("discovery.host"), port=int(self._get("discovery.port")))
         return connection
 
     @property
@@ -220,9 +212,7 @@ class MinosConfig(MinosConfigAbstract):
     @property
     def _discovery_endpoints(self) -> list[ENDPOINT]:
         info = self._get("discovery.endpoints")
-        endpoints = [
-            self._discovery_endpoints_entry(endpoint) for endpoint in info
-        ]
+        endpoints = [self._discovery_endpoints_entry(endpoint) for endpoint in info]
         return endpoints
 
     @staticmethod
