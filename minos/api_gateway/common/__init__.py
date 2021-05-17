@@ -5,6 +5,8 @@ from .configuration import MinosConfigAbstract
 from .configuration import REST
 from .importlib import classname
 from .importlib import import_module
+from .rest import RestRoutesLoader
+from .rest import RESTService
 from minos.api_gateway.common.exceptions import EmptyMinosModelSequenceException
 from minos.api_gateway.common.exceptions import MinosAttributeValidationException
 from minos.api_gateway.common.exceptions import MinosConfigDefaultAlreadySetException
