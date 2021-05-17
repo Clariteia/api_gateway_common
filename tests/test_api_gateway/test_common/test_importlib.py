@@ -7,9 +7,7 @@ Minos framework can not be copied and/or distributed without the express permiss
 """
 import unittest
 
-from minos.api_gateway import classname
-from minos.api_gateway import import_module
-from minos.api_gateway import MinosImportException
+from minos.api_gateway import MinosImportException, classname, import_module
 
 
 class TestImportlib(unittest.TestCase):

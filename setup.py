@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 """The setup script."""
-from setuptools import find_namespace_packages
-from setuptools import setup
+from setuptools import find_namespace_packages, setup
 
 with open("README.md") as readme_file:
     readme = readme_file.read()

@@ -7,15 +7,10 @@
 
 import typing as t
 
-from aiomisc.service.aiohttp import (
-    AIOHTTPService,
-)
-from .loader import (
-    RestRoutesLoader,
-)
-from aiohttp import (
-    web,
-)
+from aiohttp import web
+from aiomisc.service.aiohttp import AIOHTTPService
+
+from .loader import RestRoutesLoader
 
 
 class RESTService(AIOHTTPService):

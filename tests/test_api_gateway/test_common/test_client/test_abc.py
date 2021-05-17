@@ -1,6 +1,5 @@
 import unittest
-from unittest import IsolatedAsyncioTestCase
-from unittest import mock
+from unittest import IsolatedAsyncioTestCase, mock
 
 from minos.api_gateway.common import ClientHttp
 
