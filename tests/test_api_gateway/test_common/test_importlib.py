@@ -5,10 +5,11 @@ This file is part of minos framework.
 
 Minos framework can not be copied and/or distributed without the express permission of Clariteia SL.
 """
-
 import unittest
 
-from minos.api_gateway import MinosImportException, classname, import_module
+from minos.api_gateway import classname
+from minos.api_gateway import import_module
+from minos.api_gateway import MinosImportException
 
 
 class TestImportlib(unittest.TestCase):
