@@ -7,17 +7,16 @@ Minos framework can not be copied and/or distributed without the express permiss
 """
 import unittest
 
-from minos.api_gateway.common import (
-    MinosImportException,
-    classname,
-    import_module,
-)
+from minos.api_gateway.common import classname
+from minos.api_gateway.common import import_module
+from minos.api_gateway.common import MinosImportException
 
 
 class TestImportlib(unittest.TestCase):
     def test_import_module(self):
         object_class = import_module("tests.ImportedModule.ImportedClassTest")
-        self.assertEqual("tests.ImportedModule.ImportedClassTest", classname(object_class))
+        self.assertEqual("tests.ImportedModule.ImportedClassTest",
+                         classname(object_class))
 
     def test_not_callable_module(self):
         with self.assertRaises(TypeError) as context:

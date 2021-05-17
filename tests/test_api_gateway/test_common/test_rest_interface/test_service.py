@@ -1,25 +1,23 @@
 import typing as t
 
 from aiohttp import (
-    web,
-)
-from aiohttp.test_utils import (
-    AioHTTPTestCase,
-    unittest_run_loop,
-)
+    web, )
+from aiohttp.test_utils import AioHTTPTestCase
+from aiohttp.test_utils import unittest_run_loop
 
-from minos.api_gateway.common import (
-    MinosConfig,
-    RESTService,
-)
+from minos.api_gateway.common import MinosConfig
+from minos.api_gateway.common import RESTService
 from tests.utils import (
-    BASE_PATH,
-)
+    BASE_PATH, )
 
 
 class ExampleRestService(RESTService):
-    def __init__(self, address: str, port: int, endpoints: dict, **kwds: t.Any):
-        super().__init__(address=address, port=port, endpoints=endpoints, **kwds)
+    def __init__(self, address: str, port: int, endpoints: dict,
+                 **kwds: t.Any):
+        super().__init__(address=address,
+                         port=port,
+                         endpoints=endpoints,
+                         **kwds)
 
 
 class TestRestInterfaceService(AioHTTPTestCase):
