@@ -3,15 +3,11 @@ import typing as t
 from aiohttp import (
     web,
 )
-from aiohttp.test_utils import (
-    AioHTTPTestCase,
-    unittest_run_loop,
-)
+from aiohttp.test_utils import AioHTTPTestCase
+from aiohttp.test_utils import unittest_run_loop
 
-from minos.api_gateway.common import (
-    MinosConfig,
-    RESTService,
-)
+from minos.api_gateway.common import MinosConfig
+from minos.api_gateway.common import RESTService
 from tests.utils import (
     BASE_PATH,
 )
