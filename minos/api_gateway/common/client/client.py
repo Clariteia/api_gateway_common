@@ -21,6 +21,7 @@ HTTP_PUT = "PUT"
 
 class ClientHttp(ClientHttpBase):
     """HTTP Client aiohttp."""
+
     async def get(self, url: str, params: dict = None, **kwargs: Any):
         """GET method.
         :param url: Url to call.
@@ -30,11 +31,9 @@ class ClientHttp(ClientHttpBase):
         """
         return await self._trigger_request(HTTP_GET, url, params, **kwargs)
 
-    async def post(self,
-                   url: str,
-                   params: dict = None,
-                   data: Any = None,
-                   **kwargs: Any):
+    async def post(
+        self, url: str, params: dict = None, data: Any = None, **kwargs: Any
+    ):
         """POST method.
         :param url: Url to call.
         :param params: Params to send on URL.
@@ -42,14 +41,9 @@ class ClientHttp(ClientHttpBase):
         :param kwargs: Additional named arguments.
         :return: A `_RequestContextManager` instance.
         """
-        return await self._trigger_request(HTTP_POST, url, params, data,
-                                           **kwargs)
+        return await self._trigger_request(HTTP_POST, url, params, data, **kwargs)
 
-    async def put(self,
-                  url: str,
-                  params: dict = None,
-                  data: Any = None,
-                  **kwargs: Any):
+    async def put(self, url: str, params: dict = None, data: Any = None, **kwargs: Any):
         """PUT method.
         :param url: Url to call.
         :param params: Params to send on URL.
@@ -57,14 +51,11 @@ class ClientHttp(ClientHttpBase):
         :param kwargs: Additional named arguments.
         :return: A `_RequestContextManager` instance.
         """
-        return await self._trigger_request(HTTP_PUT, url, params, data,
-                                           **kwargs)
+        return await self._trigger_request(HTTP_PUT, url, params, data, **kwargs)
 
-    async def patch(self,
-                    url: str,
-                    params: dict = None,
-                    data: Any = None,
-                    **kwargs: Any):
+    async def patch(
+        self, url: str, params: dict = None, data: Any = None, **kwargs: Any
+    ):
         """PATCH method.
         :param url: Url to call.
         :param params: Params to send on URL.
@@ -72,14 +63,11 @@ class ClientHttp(ClientHttpBase):
         :param kwargs: Additional named arguments.
         :return: A `_RequestContextManager` instance.
         """
-        return await self._trigger_request(HTTP_PATCH, url, params, data,
-                                           **kwargs)
+        return await self._trigger_request(HTTP_PATCH, url, params, data, **kwargs)
 
-    async def delete(self,
-                     url: str,
-                     params: dict = None,
-                     data: Any = None,
-                     **kwargs: Any):
+    async def delete(
+        self, url: str, params: dict = None, data: Any = None, **kwargs: Any
+    ):
         """POST method.
         :param url: Url to call.
         :param params: Params to send on URL.
@@ -87,15 +75,12 @@ class ClientHttp(ClientHttpBase):
         :param kwargs: Additional named arguments.
         :return: A `_RequestContextManager` instance.
         """
-        return await self._trigger_request(HTTP_DELETE, url, params, data,
-                                           **kwargs)
+        return await self._trigger_request(HTTP_DELETE, url, params, data, **kwargs)
 
     @staticmethod
-    async def _trigger_request(method: str,
-                               url: str,
-                               params,
-                               data: Any = None,
-                               **kwargs: Any):
+    async def _trigger_request(
+        method: str, url: str, params, data: Any = None, **kwargs: Any
+    ):
         """Trigger the request.
         :param method: HTTP method.
         :param url: Url to call.
@@ -105,9 +90,7 @@ class ClientHttp(ClientHttpBase):
         :return: A `_RequestContextManager` instance.
         """
         async with aiohttp.ClientSession() as session:
-            async with session.request(method=method,
-                                       url=url,
-                                       params=params,
-                                       data=data,
-                                       **kwargs) as resp:
+            async with session.request(
+                method=method, url=url, params=params, data=data, **kwargs
+            ) as resp:
                 return resp
