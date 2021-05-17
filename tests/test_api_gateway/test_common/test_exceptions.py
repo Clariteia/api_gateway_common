@@ -7,25 +7,25 @@ Minos framework can not be copied and/or distributed without the express permiss
 """
 import unittest
 
-from minos.api_gateway import EmptyMinosModelSequenceException
-from minos.api_gateway import MinosAttributeValidationException
-from minos.api_gateway import MinosConfigDefaultAlreadySetException
-from minos.api_gateway import MinosConfigException
-from minos.api_gateway import MinosException
-from minos.api_gateway import MinosMalformedAttributeException
-from minos.api_gateway import MinosModelAttributeException
-from minos.api_gateway import MinosModelException
-from minos.api_gateway import MinosParseAttributeException
-from minos.api_gateway import MinosRepositoryAggregateNotFoundException
-from minos.api_gateway import MinosRepositoryDeletedAggregateException
-from minos.api_gateway import MinosRepositoryException
-from minos.api_gateway import MinosRepositoryManuallySetAggregateIdException
-from minos.api_gateway import MinosRepositoryManuallySetAggregateVersionException
-from minos.api_gateway import MinosRepositoryNonProvidedException
-from minos.api_gateway import MinosRepositoryUnknownActionException
-from minos.api_gateway import MinosReqAttributeException
-from minos.api_gateway import MinosTypeAttributeException
-from minos.api_gateway import MultiTypeMinosModelSequenceException
+from minos.api_gateway.common import EmptyMinosModelSequenceException
+from minos.api_gateway.common import MinosAttributeValidationException
+from minos.api_gateway.common import MinosConfigDefaultAlreadySetException
+from minos.api_gateway.common import MinosConfigException
+from minos.api_gateway.common import MinosException
+from minos.api_gateway.common import MinosMalformedAttributeException
+from minos.api_gateway.common import MinosModelAttributeException
+from minos.api_gateway.common import MinosModelException
+from minos.api_gateway.common import MinosParseAttributeException
+from minos.api_gateway.common import MinosRepositoryAggregateNotFoundException
+from minos.api_gateway.common import MinosRepositoryDeletedAggregateException
+from minos.api_gateway.common import MinosRepositoryException
+from minos.api_gateway.common import MinosRepositoryManuallySetAggregateIdException
+from minos.api_gateway.common import MinosRepositoryManuallySetAggregateVersionException
+from minos.api_gateway.common import MinosRepositoryNonProvidedException
+from minos.api_gateway.common import MinosRepositoryUnknownActionException
+from minos.api_gateway.common import MinosReqAttributeException
+from minos.api_gateway.common import MinosTypeAttributeException
+from minos.api_gateway.common import MultiTypeMinosModelSequenceException
 
 
 class TestExceptions(unittest.TestCase):
