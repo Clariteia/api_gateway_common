@@ -8,6 +8,7 @@ Minos framework can not be copied and/or distributed without the express permiss
 
 notcallble = True
 
+
 class ImportedClassTest(object):
     def return_test_example(self):
         return "test passed"
