@@ -6,8 +6,10 @@ from aiohttp import (
     web,
 )
 
-from minos.api_gateway.common import MinosConfig
-from minos.api_gateway.common import RestRoutesLoader
+from minos.api_gateway.common import (
+    MinosConfig,
+    RestRoutesLoader,
+)
 from tests.utils import (
     BASE_PATH,
 )

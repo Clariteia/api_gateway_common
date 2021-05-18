@@ -19,8 +19,10 @@ from pathlib import (
 
 import yaml
 
-from minos.api_gateway.common.exceptions import MinosConfigDefaultAlreadySetException
-from minos.api_gateway.common.exceptions import MinosConfigException
+from minos.api_gateway.common.exceptions import (
+    MinosConfigDefaultAlreadySetException,
+    MinosConfigException,
+)
 
 CONNECTION = collections.namedtuple("Connection", "host port")
 ENDPOINT = collections.namedtuple("Endpoint", "name route method controller action")
