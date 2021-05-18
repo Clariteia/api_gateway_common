@@ -7,25 +7,27 @@ Minos framework can not be copied and/or distributed without the express permiss
 """
 import unittest
 
-from minos.api_gateway.common import EmptyMinosModelSequenceException
-from minos.api_gateway.common import MinosAttributeValidationException
-from minos.api_gateway.common import MinosConfigDefaultAlreadySetException
-from minos.api_gateway.common import MinosConfigException
-from minos.api_gateway.common import MinosException
-from minos.api_gateway.common import MinosMalformedAttributeException
-from minos.api_gateway.common import MinosModelAttributeException
-from minos.api_gateway.common import MinosModelException
-from minos.api_gateway.common import MinosParseAttributeException
-from minos.api_gateway.common import MinosRepositoryAggregateNotFoundException
-from minos.api_gateway.common import MinosRepositoryDeletedAggregateException
-from minos.api_gateway.common import MinosRepositoryException
-from minos.api_gateway.common import MinosRepositoryManuallySetAggregateIdException
-from minos.api_gateway.common import MinosRepositoryManuallySetAggregateVersionException
-from minos.api_gateway.common import MinosRepositoryNonProvidedException
-from minos.api_gateway.common import MinosRepositoryUnknownActionException
-from minos.api_gateway.common import MinosReqAttributeException
-from minos.api_gateway.common import MinosTypeAttributeException
-from minos.api_gateway.common import MultiTypeMinosModelSequenceException
+from minos.api_gateway.common import (
+    EmptyMinosModelSequenceException,
+    MinosAttributeValidationException,
+    MinosConfigDefaultAlreadySetException,
+    MinosConfigException,
+    MinosException,
+    MinosMalformedAttributeException,
+    MinosModelAttributeException,
+    MinosModelException,
+    MinosParseAttributeException,
+    MinosRepositoryAggregateNotFoundException,
+    MinosRepositoryDeletedAggregateException,
+    MinosRepositoryException,
+    MinosRepositoryManuallySetAggregateIdException,
+    MinosRepositoryManuallySetAggregateVersionException,
+    MinosRepositoryNonProvidedException,
+    MinosRepositoryUnknownActionException,
+    MinosReqAttributeException,
+    MinosTypeAttributeException,
+    MultiTypeMinosModelSequenceException,
+)
 
 
 class TestExceptions(unittest.TestCase):
@@ -44,95 +46,68 @@ class TestExceptions(unittest.TestCase):
         self.assertTrue(issubclass(MinosConfigException, MinosException))
 
     def test_config_default_already_set(self):
-        self.assertTrue(
-            issubclass(MinosConfigDefaultAlreadySetException,
-                       MinosConfigException))
+        self.assertTrue(issubclass(MinosConfigDefaultAlreadySetException, MinosConfigException))
 
     def test_repository_aggregate_not_found(self):
-        self.assertTrue(
-            issubclass(MinosRepositoryAggregateNotFoundException,
-                       MinosRepositoryException))
+        self.assertTrue(issubclass(MinosRepositoryAggregateNotFoundException, MinosRepositoryException))
 
     def test_repository_deleted_aggregate(self):
-        self.assertTrue(
-            issubclass(MinosRepositoryDeletedAggregateException,
-                       MinosRepositoryException))
+        self.assertTrue(issubclass(MinosRepositoryDeletedAggregateException, MinosRepositoryException))
 
     def test_repository_manually_set_aggregate_id(self):
-        self.assertTrue(
-            issubclass(MinosRepositoryManuallySetAggregateIdException,
-                       MinosRepositoryException))
+        self.assertTrue(issubclass(MinosRepositoryManuallySetAggregateIdException, MinosRepositoryException))
 
     def test_repository_manually_set_aggregate_version(self):
-        self.assertTrue(
-            issubclass(
-                MinosRepositoryManuallySetAggregateVersionException,
-                MinosRepositoryException,
-            ))
+        self.assertTrue(issubclass(MinosRepositoryManuallySetAggregateVersionException, MinosRepositoryException,))
 
     def test_repository_bad_action(self):
-        self.assertTrue(
-            issubclass(MinosRepositoryUnknownActionException,
-                       MinosRepositoryException))
+        self.assertTrue(issubclass(MinosRepositoryUnknownActionException, MinosRepositoryException))
 
     def test_repository_non_set(self):
-        self.assertTrue(
-            issubclass(MinosRepositoryNonProvidedException,
-                       MinosRepositoryException))
+        self.assertTrue(issubclass(MinosRepositoryNonProvidedException, MinosRepositoryException))
 
     def test_model(self):
         self.assertTrue(issubclass(MinosModelException, MinosException))
 
     def test_model_emtpy_sequence(self):
-        self.assertTrue(
-            issubclass(EmptyMinosModelSequenceException, MinosModelException))
+        self.assertTrue(issubclass(EmptyMinosModelSequenceException, MinosModelException))
 
     def test_model_multi_type_sequence(self):
-        self.assertTrue(
-            issubclass(MultiTypeMinosModelSequenceException,
-                       MinosModelException))
+        self.assertTrue(issubclass(MultiTypeMinosModelSequenceException, MinosModelException))
 
     def test_model_attribute(self):
-        self.assertTrue(
-            issubclass(MinosModelAttributeException, MinosException))
+        self.assertTrue(issubclass(MinosModelAttributeException, MinosException))
 
     def test_required_attribute(self):
-        self.assertTrue(
-            issubclass(MinosReqAttributeException,
-                       MinosModelAttributeException))
+        self.assertTrue(issubclass(MinosReqAttributeException, MinosModelAttributeException))
 
     def test_type_attribute(self):
-        self.assertTrue(
-            issubclass(MinosTypeAttributeException,
-                       MinosModelAttributeException))
+        self.assertTrue(issubclass(MinosTypeAttributeException, MinosModelAttributeException))
 
     def test_type_attribute_repr(self):
         exception = MinosTypeAttributeException("foo", float, True)
         message = (
             "MinosTypeAttributeException(message=\"The <class 'float'> expected type for 'foo' "
-            "does not match with the given data type: <class 'bool'>\")")
+            "does not match with the given data type: <class 'bool'>\")"
+        )
         self.assertEqual(message, repr(exception))
 
     def test_malformed_attribute(self):
-        self.assertTrue(
-            issubclass(MinosMalformedAttributeException,
-                       MinosModelAttributeException))
+        self.assertTrue(issubclass(MinosMalformedAttributeException, MinosModelAttributeException))
 
     def test_parse_attribute(self):
-        self.assertTrue(
-            issubclass(MinosParseAttributeException,
-                       MinosModelAttributeException))
+        self.assertTrue(issubclass(MinosParseAttributeException, MinosModelAttributeException))
 
     def test_attribute_parse_repr(self):
         exception = MinosParseAttributeException("foo", 34, ValueError())
-        message = ('MinosParseAttributeException(message="ValueError() '
-                   "was raised while parsing 'foo' field with 34 value.\")")
+        message = (
+            'MinosParseAttributeException(message="ValueError() '
+            "was raised while parsing 'foo' field with 34 value.\")"
+        )
         self.assertEqual(message, repr(exception))
 
     def test_attribute_validation(self):
-        self.assertTrue(
-            issubclass(MinosAttributeValidationException,
-                       MinosModelAttributeException))
+        self.assertTrue(issubclass(MinosAttributeValidationException, MinosModelAttributeException))
 
     def test_attribute_validation_repr(self):
         exception = MinosAttributeValidationException("foo", 34)
