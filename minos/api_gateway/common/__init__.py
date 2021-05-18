@@ -32,8 +32,7 @@ from minos.api_gateway.common.exceptions import (
     MultiTypeMinosModelSequenceException,
 )
 
-from .client import (
-    ClientHttp, )
+from .client import ClientHttp
 from .configuration import (
     ENDPOINT,
     REST,
