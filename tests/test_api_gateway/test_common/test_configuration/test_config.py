@@ -8,16 +8,14 @@ Minos framework can not be copied and/or distributed without the express permiss
 import os
 import unittest
 from unittest import (
-    mock,
-)
+    mock, )
 
 from minos.api_gateway.common import MinosConfig
 from minos.api_gateway.common import MinosConfigAbstract
 from minos.api_gateway.common import MinosConfigDefaultAlreadySetException
 from minos.api_gateway.common import MinosConfigException
 from tests.utils import (
-    BASE_PATH,
-)
+    BASE_PATH, )
 
 
 class TestMinosConfig(unittest.TestCase):
@@ -93,12 +91,14 @@ class TestMinosConfig(unittest.TestCase):
 
     @mock.patch.dict(os.environ, {"API_GATEWAY_REST_HOST": "::1"})
     def test_overwrite_with_environment_false(self):
-        config = MinosConfig(path=self.config_file_path, with_environment=False)
+        config = MinosConfig(path=self.config_file_path,
+                             with_environment=False)
         rest = config.rest
         self.assertEqual("localhost", rest.connection.host)
 
     def test_overwrite_with_parameter(self):
-        config = MinosConfig(path=self.config_file_path, api_gateway_rest_host="::1")
+        config = MinosConfig(path=self.config_file_path,
+                             api_gateway_rest_host="::1")
         rest = config.rest
         self.assertEqual("::1", rest.connection.host)
 
