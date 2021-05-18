@@ -22,6 +22,7 @@ class RESTService(AIOHTTPService):
     Expose REST Interface handler using aiomisc AIOHTTPService.
 
     """
+
     def __init__(self,
                  address: str,
                  port: int,
