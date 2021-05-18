@@ -11,7 +11,8 @@ import typing as t
 import six
 
 from .exceptions import (
-    MinosImportException, )
+    MinosImportException,
+)
 
 
 def import_module(module: str) -> t.Type:

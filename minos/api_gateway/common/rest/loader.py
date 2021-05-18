@@ -5,10 +5,12 @@
 # Minos framework can not be copied and/or distributed without the express
 # permission of Clariteia SL.
 from aiohttp import (
-    web, )
+    web,
+)
 
 from ..importlib import (
-    import_module, )
+    import_module,
+)
 
 
 class RestRoutesLoader:
@@ -21,9 +23,7 @@ class RestRoutesLoader:
 
     __slots__ = "_endpoints", "_app"
 
-    def __init__(self,
-                 endpoints: dict,
-                 app: web.Application = web.Application()):
+    def __init__(self, endpoints: dict, app: web.Application = web.Application()):
         self._endpoints = endpoints
         self._app = app
         self.load_routes()
