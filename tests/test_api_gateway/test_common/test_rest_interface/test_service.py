@@ -1,15 +1,17 @@
 import typing as t
 
-from aiohttp import web
+from aiohttp import (
+    web, )
 from aiohttp.test_utils import AioHTTPTestCase
 from aiohttp.test_utils import unittest_run_loop
 
 from minos.api_gateway.common import MinosConfig
 from minos.api_gateway.common import RESTService
-from tests.utils import BASE_PATH
+from tests.utils import (
+    BASE_PATH, )
 
 
-class TestRestService(RESTService):
+class ExampleRestService(RESTService):
     def __init__(self, address: str, port: int, endpoints: dict,
                  **kwds: t.Any):
         super().__init__(address=address,
@@ -27,7 +29,7 @@ class TestRestInterfaceService(AioHTTPTestCase):
         """
         app = web.Application()
         config = MinosConfig(self.CONFIG_FILE_PATH)
-        rest_interface = RESTService(
+        rest_interface = ExampleRestService(
             address=config.rest.connection.host,
             port=config.rest.connection.port,
             endpoints=config.rest.endpoints,
@@ -58,7 +60,7 @@ class TestCustomRestInterfaceService(AioHTTPTestCase):
         Override the get_app method to return your application.
         """
         config = MinosConfig(self.CONFIG_FILE_PATH)
-        rest_interface = TestRestService(
+        rest_interface = ExampleRestService(
             address=config.rest.connection.host,
             port=config.rest.connection.port,
             endpoints=config.rest.endpoints,

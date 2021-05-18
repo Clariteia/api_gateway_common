@@ -7,7 +7,8 @@ Minos framework can not be copied and/or distributed without the express permiss
 """
 from abc import ABC
 from abc import abstractmethod
-from typing import Any
+from typing import (
+    Any, )
 
 
 class ClientHttpBase(ABC):  # pragma: no cover

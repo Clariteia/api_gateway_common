@@ -1,0 +1,51 @@
+[tool.poetry]
+name = "api_gateway_common"
+version = "0.0.11"
+description = "Python Package with common Classes and Utilities used in Minos Microservices."
+readme = "README.md"
+repository = "https://github.com/clariteia/api_gateway_common"
+homepage = "https://clariteia.com"
+authors = ["Clariteia Devs <devs@clariteia.com>"]
+license = "MIT"
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Developers",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+]
+keywords = [
+    "clariteia",
+    "minos",
+    "api gateway",
+    "common",
+]
+packages = [
+    { include = "minos" }
+]
+include = [
+    "AUTHORS.md",
+    "HISTORY.md",
+    "LICENSE",
+]
+
+
+[tool.poetry.dependencies]
+python = "^3.9"
+aiohttp = "^3.7.4"
+PyYAML = "^5.4.1"
+six = "^1.16.0"
+aiomisc = "^14.0.3"
+
+[tool.poetry.dev-dependencies]
+coverage = "^5.5"
+pytest = "^6.2.4"
+black = "^21.5b1"
+isort = "^5.8.0"
+flake8 = "^3.9.2"
+Sphinx = "^4.0.1"
+pre-commit = "^2.12.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
