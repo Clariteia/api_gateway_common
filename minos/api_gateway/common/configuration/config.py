@@ -5,18 +5,24 @@ This file is part of minos framework.
 
 Minos framework can not be copied and/or distributed without the express permission of Clariteia SL.
 """
-from __future__ import annotations
+from __future__ import (
+    annotations,
+)
 
 import abc
 import collections
 import os
 import typing as t
-from pathlib import Path
+from pathlib import (
+    Path,
+)
 
 import yaml
 
-from minos.api_gateway.common.exceptions import MinosConfigDefaultAlreadySetException
-from minos.api_gateway.common.exceptions import MinosConfigException
+from minos.api_gateway.common.exceptions import (
+    MinosConfigDefaultAlreadySetException,
+    MinosConfigException,
+)
 
 CONNECTION = collections.namedtuple("Connection", "host port")
 ENDPOINT = collections.namedtuple("Endpoint", "name route method controller action")

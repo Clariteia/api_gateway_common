@@ -6,10 +6,16 @@
 # permission of Clariteia SL.
 import typing as t
 
-from aiohttp import web
-from aiomisc.service.aiohttp import AIOHTTPService
+from aiohttp import (
+    web,
+)
+from aiomisc.service.aiohttp import (
+    AIOHTTPService,
+)
 
-from .loader import RestRoutesLoader
+from .loader import (
+    RestRoutesLoader,
+)
 
 
 class RESTService(AIOHTTPService):

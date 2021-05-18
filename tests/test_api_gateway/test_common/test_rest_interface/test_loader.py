@@ -1,10 +1,18 @@
-from unittest import IsolatedAsyncioTestCase
+from unittest import (
+    IsolatedAsyncioTestCase,
+)
 
-from aiohttp import web
+from aiohttp import (
+    web,
+)
 
-from minos.api_gateway.common import MinosConfig
-from minos.api_gateway.common import RestRoutesLoader
-from tests.utils import BASE_PATH
+from minos.api_gateway.common import (
+    MinosConfig,
+    RestRoutesLoader,
+)
+from tests.utils import (
+    BASE_PATH,
+)
 
 
 class TestRestInterfaceLoader(IsolatedAsyncioTestCase):
