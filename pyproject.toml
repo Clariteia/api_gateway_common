@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "api_gateway_common"
+name = "minos_apigateway_common"
 version = "0.0.1"
 description = "Python Package with common Classes and Utilities used in Minos API Gateway."
 readme = "README.md"
@@ -17,7 +17,7 @@ classifiers = [
 keywords = [
     "clariteia",
     "minos",
-    "api gateway",
+    "apigateway",
     "microservices",
 ]
 packages = [
