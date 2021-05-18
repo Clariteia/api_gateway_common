@@ -1,0 +1,43 @@
+rest:
+    host: localhost
+    port: 8900
+    endpoints:
+        - name: AddOrder
+          route: /order
+          method: POST
+          controller: tests.services.TestRestService.RestService
+          action: add_order
+        - name: GetOrder
+          route: /order
+          method: GET
+          controller: tests.services.TestRestService.RestService
+          action: get_order
+discovery:
+    host: localhost
+    port: 8080
+    path: /discover
+    endpoints:
+        - name: Discover
+          route: /discover
+          method: GET
+          controller: minos.services.DiscoveryService
+          action: discover
+        - name: Subscribe
+          route: /subscribe
+          method: POST
+          controller: minos.services.DiscoveryService
+          action: subscribe
+        - name: Unsubscribe
+          route: /unsubscribe
+          method: POST
+          controller: minos.services.DiscoveryService
+          action: unsubscribe
+        - name: SystemHealth
+          route: /system/health
+          method: GET
+          controller: minos.services.DiscoveryService
+          action: system_health
+    db:
+        host: localhost
+        port: 6379
+        password:

@@ -7,7 +7,7 @@ Welcome to API Gateway Common's documentation!
 
    readme
    usage
-   modules
+   api/modules
    authors
    history
 
