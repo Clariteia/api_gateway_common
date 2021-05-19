@@ -18,8 +18,8 @@ from tests.utils import (
 
 
 class ExampleRestService(RESTService):
-    def __init__(self, address: str, port: int, endpoints: dict, **kwds: t.Any):
-        super().__init__(address=address, port=port, endpoints=endpoints, **kwds)
+    def __init__(self, address: str, port: int, endpoints: dict, config=MinosConfig, **kwds: t.Any):
+        super().__init__(address=address, port=port, endpoints=endpoints, config=config, **kwds)
 
 
 class TestRestInterfaceService(AioHTTPTestCase):
@@ -35,6 +35,7 @@ class TestRestInterfaceService(AioHTTPTestCase):
             address=config.rest.connection.host,
             port=config.rest.connection.port,
             endpoints=config.rest.endpoints,
+            config=config,
             app=app,
         )
 
@@ -63,7 +64,10 @@ class TestCustomRestInterfaceService(AioHTTPTestCase):
         """
         config = MinosConfig(self.CONFIG_FILE_PATH)
         rest_interface = ExampleRestService(
-            address=config.rest.connection.host, port=config.rest.connection.port, endpoints=config.rest.endpoints,
+            address=config.rest.connection.host,
+            port=config.rest.connection.port,
+            endpoints=config.rest.endpoints,
+            config=config,
         )
 
         return await rest_interface.create_application()
