@@ -1,8 +1,6 @@
 import typing as t
 
-from aiohttp import (
-    web,
-)
+from aiohttp import web
 from aiohttp.test_utils import (
     AioHTTPTestCase,
     unittest_run_loop,
@@ -12,9 +10,7 @@ from minos.api_gateway.common import (
     MinosConfig,
     RESTService,
 )
-from tests.utils import (
-    BASE_PATH,
-)
+from tests.utils import BASE_PATH
 
 
 class ExampleRestService(RESTService):
