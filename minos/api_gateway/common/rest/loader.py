@@ -6,10 +6,16 @@
 # permission of Clariteia SL.
 import functools
 
-from aiohttp import web
+from aiohttp import (
+    web,
+)
 
-from ..configuration import MinosConfig
-from ..importlib import import_module
+from ..configuration import (
+    MinosConfig,
+)
+from ..importlib import (
+    import_module,
+)
 
 
 class RestRoutesLoader:
