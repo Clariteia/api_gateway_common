@@ -13,6 +13,9 @@ from aiomisc.service.aiohttp import (
     AIOHTTPService,
 )
 
+from ..configuration import (
+    MinosConfig,
+)
 from .loader import (
     RestRoutesLoader,
 )
@@ -27,13 +30,19 @@ class RESTService(AIOHTTPService):
     """
 
     def __init__(
-        self, address: str, port: int, endpoints: dict, app: web.Application = web.Application(), **kwds: t.Any
+        self,
+        address: str,
+        port: int,
+        endpoints: dict,
+        config: MinosConfig,
+        app: web.Application = web.Application(),
+        **kwds: t.Any
     ):
         address = address
         port = port
         super().__init__(address=address, port=port, **kwds)
         self._endpoints = endpoints
-        self.rest_interface = RestRoutesLoader(endpoints=endpoints, app=app)
+        self.rest_interface = RestRoutesLoader(endpoints=endpoints, config=config, app=app)
 
     async def create_application(self):
         return self.rest_interface.get_app()  # pragma: no cover
