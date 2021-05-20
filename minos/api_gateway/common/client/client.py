@@ -28,7 +28,7 @@ class ClientHttp(ClientHttpBase):
 
     async def __aenter__(self):
         self.session = aiohttp.ClientSession()
-        return self.session
+        return self
 
     async def __aexit__(self, exc_type, exc_val, exc_tb):
         await self.session.close()
@@ -91,5 +91,4 @@ class ClientHttp(ClientHttpBase):
         :param kwargs: Additional named arguments.
         :return: A `_RequestContextManager` instance.
         """
-        async with self.session.request(method=method, url=url, params=params, data=data, **kwargs) as response:
-            return response
+        return await self.session.request(method=method, url=url, params=params, data=data, **kwargs)
