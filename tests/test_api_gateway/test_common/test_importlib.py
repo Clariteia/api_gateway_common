@@ -32,7 +32,8 @@ class TestImportlib(unittest.TestCase):
     def test_classname(self):
         self.assertEqual("builtins.int", classname(int))
         self.assertEqual(
-            "minos.api_gateway.common.exceptions.MinosImportException", classname(MinosImportException),
+            "minos.api_gateway.common.exceptions.MinosImportException",
+            classname(MinosImportException),
         )
 
 
