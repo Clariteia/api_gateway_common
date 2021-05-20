@@ -9,3 +9,7 @@
 * Added REST Loader routes.
 * modified the .gitignore
 * Added injection of MinosConfig on Handler class
+
+## 0.0.3 (2021-05-20)
+
+* Bug Corrections
