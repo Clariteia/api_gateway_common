@@ -58,7 +58,12 @@ class TestExceptions(unittest.TestCase):
         self.assertTrue(issubclass(MinosRepositoryManuallySetAggregateIdException, MinosRepositoryException))
 
     def test_repository_manually_set_aggregate_version(self):
-        self.assertTrue(issubclass(MinosRepositoryManuallySetAggregateVersionException, MinosRepositoryException,))
+        self.assertTrue(
+            issubclass(
+                MinosRepositoryManuallySetAggregateVersionException,
+                MinosRepositoryException,
+            )
+        )
 
     def test_repository_bad_action(self):
         self.assertTrue(issubclass(MinosRepositoryUnknownActionException, MinosRepositoryException))

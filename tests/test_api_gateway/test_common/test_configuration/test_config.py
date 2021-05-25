@@ -54,6 +54,8 @@ class TestMinosConfig(unittest.TestCase):
         self.assertEqual(6379, db.port)
         self.assertEqual(None, db.password)
 
+        self.assertEqual("/discover", discovery.connection.path)
+
         endpoints = discovery.endpoints
         self.assertEqual("Discover", endpoints[0].name)
 
