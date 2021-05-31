@@ -2,7 +2,7 @@
 Usage
 =====
 
-To use Minos Microservice Common in a project::
+To use API Gateway Common in a project::
 
     from minos import common
 
