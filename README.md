@@ -1,7 +1,7 @@
 # API Gateway Common
 
-[![codecov](https://codecov.io/gh/Clariteia/minos_microservice_common/branch/main/graph/badge.svg)](https://codecov.io/gh/Clariteia/minos_microservice_common)
-![Tests](https://github.com/Clariteia/minos_microservice_common/actions/workflows/python-tests.yml/badge.svg)
+[![codecov](https://codecov.io/gh/Clariteia/api_gateway_common/branch/main/graph/badge.svg)](https://codecov.io/gh/Clariteia/api_gateway_common)
+![Tests](https://github.com/Clariteia/api_gateway_common/actions/workflows/python-tests.yml/badge.svg)
 
 Minos is a framework which helps you create [reactive](https://www.reactivemanifesto.org/) microservices in Python.
 Internally, it leverages Event Sourcing, CQRS and a message driven architecture to fulfil the commitments of an
