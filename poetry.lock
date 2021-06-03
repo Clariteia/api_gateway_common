@@ -19,7 +19,7 @@ speedups = ["aiodns", "brotlipy", "cchardet"]
 
 [[package]]
 name = "aiomisc"
-version = "14.0.7"
+version = "14.1.0"
 description = "aiomisc - miscellaneous utils for asyncio"
 category = "main"
 optional = false
@@ -34,7 +34,7 @@ asgi = ["aiohttp-asgi"]
 carbon = ["aiocarbon (>=0.15,<1.0)"]
 contextvars = ["contextvars (>=2.4,<3.0)"]
 cron = ["croniter (>=0.3.34,<0.4.0)"]
-develop = ["aiohttp (<4)", "aiohttp-asgi", "async-generator", "async-timeout", "coverage (==4.5.1)", "coveralls", "croniter (>=0.3.34,<0.4.0)", "fastapi", "freezegun (<1.1)", "mypy (>=0.782,<1.0)", "pylava", "pytest", "pytest-cov (>=2.5.1,<2.6.0)", "pytest-freezegun (>=0.4.2,<0.5.0)", "sphinx (>=3.5.1)", "sphinx-autobuild", "sphinx-intl", "timeout-decorator", "tox (>=2.4)"]
+develop = ["aiocontextvars (==0.2.2)", "aiohttp (<4)", "aiohttp-asgi", "async-generator", "async-timeout", "coverage (==4.5.1)", "coveralls", "croniter (>=0.3.34,<0.4.0)", "fastapi", "freezegun (<1.1)", "mypy (>=0.782,<1.0)", "pylava", "pytest", "pytest-cov (>=2.5.1,<2.6.0)", "pytest-freezegun (>=0.4.2,<0.5.0)", "sphinx (>=3.5.1)", "sphinx-autobuild", "sphinx-intl", "timeout-decorator", "tox (>=2.4)"]
 raven = ["raven-aiohttp"]
 uvloop = ["uvloop (>=0.14,<1)"]
 
@@ -761,8 +761,8 @@ aiohttp = [
     {file = "aiohttp-3.7.4.post0.tar.gz", hash = "sha256:493d3299ebe5f5a7c66b9819eacdcfbbaaf1a8e84911ddffcdc48888497afecf"},
 ]
 aiomisc = [
-    {file = "aiomisc-14.0.7-py3-none-any.whl", hash = "sha256:409ff3548a1b5d92b332d6d6ea6a16afe389a4407490c02f48eb0a4212ee3c7c"},
-    {file = "aiomisc-14.0.7.tar.gz", hash = "sha256:8eec96c1813f45d2c64f8020a26b561215e1bace94bc6d593958c2c4c425bbb9"},
+    {file = "aiomisc-14.1.0-py3-none-any.whl", hash = "sha256:886223a4cfb469224b27ef6a1503966ffbe2f22b322be1595874fe9e22ffc09d"},
+    {file = "aiomisc-14.1.0.tar.gz", hash = "sha256:6ad99346dbe98c995ba76e9c50dffe492c6dffd383653b20593b44601c89ea7a"},
 ]
 alabaster = [
     {file = "alabaster-0.7.12-py2.py3-none-any.whl", hash = "sha256:446438bdcca0e05bd45ea2de1668c1d9b032e1a9154c2c259092d77031ddd359"},
