@@ -111,4 +111,4 @@ ENV/
 *.mdb
 
 # Sphinx Api Documentation
-docs/api
+/docs/api/

@@ -197,7 +197,9 @@ class MinosConfig(MinosConfigAbstract):
 
     @property
     def _discovery_connection(self):
-        connection = CONNECTION(host=self._get("discovery.host"), port=int(self._get("discovery.port")))
+        connection = DISCOVERY_CONNECTION(
+            host=self._get("discovery.host"), port=int(self._get("discovery.port")), path=self._get("discovery.path")
+        )
         return connection
 
     @property
