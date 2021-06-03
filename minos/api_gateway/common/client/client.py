@@ -26,6 +26,13 @@ HTTP_PUT = "PUT"
 class ClientHttp(ClientHttpBase):
     """HTTP Client aiohttp."""
 
+    async def __aenter__(self):
+        self.session = aiohttp.ClientSession()
+        return self
+
+    async def __aexit__(self, exc_type, exc_val, exc_tb):
+        await self.session.close()
+
     async def get(self, url: str, params: dict = None, **kwargs: Any):
         """GET method.
         :param url: Url to call.
@@ -75,8 +82,7 @@ class ClientHttp(ClientHttpBase):
         """
         return await self._trigger_request(HTTP_DELETE, url, params, data, **kwargs)
 
-    @staticmethod
-    async def _trigger_request(method: str, url: str, params, data: Any = None, **kwargs: Any):
+    async def _trigger_request(self, method: str, url: str, params, data: Any = None, **kwargs: Any):
         """Trigger the request.
         :param method: HTTP method.
         :param url: Url to call.
@@ -85,6 +91,4 @@ class ClientHttp(ClientHttpBase):
         :param kwargs: Additional named arguments.
         :return: A `_RequestContextManager` instance.
         """
-        async with aiohttp.ClientSession() as session:
-            async with session.request(method=method, url=url, params=params, data=data, **kwargs) as resp:
-                return resp
+        return await self.session.request(method=method, url=url, params=params, data=data, **kwargs)
