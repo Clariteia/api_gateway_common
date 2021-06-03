@@ -1,0 +1,764 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>minos.api_gateway.common.exceptions module &mdash; API Gateway Common 0.0.4 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> API Gateway Common
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../runthetests.html">Run the tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage.html">Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="minos.html">minos namespace</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../authors.html">Credits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../history.html">History</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">API Gateway Common</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>minos.api_gateway.common.exceptions module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/api/minos.api_gateway.common.exceptions.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-minos.api_gateway.common.exceptions">
+<span id="minos-api-gateway-common-exceptions-module"></span><h1>minos.api_gateway.common.exceptions module<a class="headerlink" href="#module-minos.api_gateway.common.exceptions" title="Permalink to this headline">¶</a></h1>
+<p>Copyright (C) 2021 Clariteia SL</p>
+<p>This file is part of minos framework.</p>
+<p>Minos framework can not be copied and/or distributed without the express permission of Clariteia SL.</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.EmptyMinosModelSequenceException">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.api_gateway.common.exceptions.</span></span><span class="sig-name descname"><span class="pre">EmptyMinosModelSequenceException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/api_gateway/common/exceptions.html#EmptyMinosModelSequenceException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.api_gateway.common.exceptions.EmptyMinosModelSequenceException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#minos.api_gateway.common.exceptions.MinosModelException" title="minos.api_gateway.common.exceptions.MinosModelException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.api_gateway.common.exceptions.MinosModelException</span></code></a></p>
+<p>Exception to be raised when a sequence must be not empty, but it is empty.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.EmptyMinosModelSequenceException.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.api_gateway.common.exceptions.EmptyMinosModelSequenceException.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.EmptyMinosModelSequenceException.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.api_gateway.common.exceptions.EmptyMinosModelSequenceException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.EmptyMinosModelSequenceException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.api_gateway.common.exceptions.EmptyMinosModelSequenceException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosAttributeValidationException">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.api_gateway.common.exceptions.</span></span><span class="sig-name descname"><span class="pre">MinosAttributeValidationException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/api_gateway/common/exceptions.html#MinosAttributeValidationException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosAttributeValidationException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#minos.api_gateway.common.exceptions.MinosModelAttributeException" title="minos.api_gateway.common.exceptions.MinosModelAttributeException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.api_gateway.common.exceptions.MinosModelAttributeException</span></code></a></p>
+<p>Exception to be raised when some fields are not valid.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosAttributeValidationException.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/api_gateway/common/exceptions.html#MinosAttributeValidationException.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosAttributeValidationException.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosAttributeValidationException.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosAttributeValidationException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosAttributeValidationException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosAttributeValidationException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosConfigDefaultAlreadySetException">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.api_gateway.common.exceptions.</span></span><span class="sig-name descname"><span class="pre">MinosConfigDefaultAlreadySetException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/api_gateway/common/exceptions.html#MinosConfigDefaultAlreadySetException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosConfigDefaultAlreadySetException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#minos.api_gateway.common.exceptions.MinosConfigException" title="minos.api_gateway.common.exceptions.MinosConfigException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.api_gateway.common.exceptions.MinosConfigException</span></code></a></p>
+<p>Exception to be raised when some config is already set as default.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosConfigDefaultAlreadySetException.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosConfigDefaultAlreadySetException.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosConfigDefaultAlreadySetException.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosConfigDefaultAlreadySetException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosConfigDefaultAlreadySetException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosConfigDefaultAlreadySetException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosConfigException">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.api_gateway.common.exceptions.</span></span><span class="sig-name descname"><span class="pre">MinosConfigException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/api_gateway/common/exceptions.html#MinosConfigException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosConfigException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#minos.api_gateway.common.exceptions.MinosException" title="minos.api_gateway.common.exceptions.MinosException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.api_gateway.common.exceptions.MinosException</span></code></a></p>
+<p>Base config exception.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosConfigException.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosConfigException.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosConfigException.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosConfigException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosConfigException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosConfigException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosException">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.api_gateway.common.exceptions.</span></span><span class="sig-name descname"><span class="pre">MinosException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/api_gateway/common/exceptions.html#MinosException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Exception class for import packages or modules</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosException.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/api_gateway/common/exceptions.html#MinosException.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosException.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosException.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosImportException">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.api_gateway.common.exceptions.</span></span><span class="sig-name descname"><span class="pre">MinosImportException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/api_gateway/common/exceptions.html#MinosImportException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosImportException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#minos.api_gateway.common.exceptions.MinosException" title="minos.api_gateway.common.exceptions.MinosException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.api_gateway.common.exceptions.MinosException</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosImportException.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosImportException.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosImportException.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosImportException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosImportException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosImportException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosMalformedAttributeException">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.api_gateway.common.exceptions.</span></span><span class="sig-name descname"><span class="pre">MinosMalformedAttributeException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/api_gateway/common/exceptions.html#MinosMalformedAttributeException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosMalformedAttributeException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#minos.api_gateway.common.exceptions.MinosModelAttributeException" title="minos.api_gateway.common.exceptions.MinosModelAttributeException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.api_gateway.common.exceptions.MinosModelAttributeException</span></code></a></p>
+<p>Exception to be raised when there are any kind of problems with the type definition.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosMalformedAttributeException.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosMalformedAttributeException.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosMalformedAttributeException.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosMalformedAttributeException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosMalformedAttributeException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosMalformedAttributeException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosMessageException">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.api_gateway.common.exceptions.</span></span><span class="sig-name descname"><span class="pre">MinosMessageException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/api_gateway/common/exceptions.html#MinosMessageException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosMessageException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#minos.api_gateway.common.exceptions.MinosException" title="minos.api_gateway.common.exceptions.MinosException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.api_gateway.common.exceptions.MinosException</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosMessageException.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosMessageException.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosMessageException.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosMessageException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosMessageException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosMessageException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosModelAttributeException">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.api_gateway.common.exceptions.</span></span><span class="sig-name descname"><span class="pre">MinosModelAttributeException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/api_gateway/common/exceptions.html#MinosModelAttributeException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosModelAttributeException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#minos.api_gateway.common.exceptions.MinosException" title="minos.api_gateway.common.exceptions.MinosException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.api_gateway.common.exceptions.MinosException</span></code></a></p>
+<p>Base model attributes exception.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosModelAttributeException.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosModelAttributeException.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosModelAttributeException.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosModelAttributeException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosModelAttributeException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosModelAttributeException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosModelException">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.api_gateway.common.exceptions.</span></span><span class="sig-name descname"><span class="pre">MinosModelException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/api_gateway/common/exceptions.html#MinosModelException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosModelException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#minos.api_gateway.common.exceptions.MinosException" title="minos.api_gateway.common.exceptions.MinosException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.api_gateway.common.exceptions.MinosException</span></code></a></p>
+<p>Exception to be raised when some mandatory condition is not satisfied by a model.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosModelException.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosModelException.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosModelException.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosModelException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosModelException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosModelException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosParseAttributeException">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.api_gateway.common.exceptions.</span></span><span class="sig-name descname"><span class="pre">MinosParseAttributeException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exception</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/api_gateway/common/exceptions.html#MinosParseAttributeException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosParseAttributeException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#minos.api_gateway.common.exceptions.MinosModelAttributeException" title="minos.api_gateway.common.exceptions.MinosModelAttributeException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.api_gateway.common.exceptions.MinosModelAttributeException</span></code></a></p>
+<p>Exception to be raised when there are any kind of problems with the parsing logic.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosParseAttributeException.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exception</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/api_gateway/common/exceptions.html#MinosParseAttributeException.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosParseAttributeException.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosParseAttributeException.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosParseAttributeException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosParseAttributeException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosParseAttributeException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosProtocolException">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.api_gateway.common.exceptions.</span></span><span class="sig-name descname"><span class="pre">MinosProtocolException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/api_gateway/common/exceptions.html#MinosProtocolException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosProtocolException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#minos.api_gateway.common.exceptions.MinosException" title="minos.api_gateway.common.exceptions.MinosException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.api_gateway.common.exceptions.MinosException</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosProtocolException.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosProtocolException.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosProtocolException.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosProtocolException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosProtocolException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosProtocolException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosRepositoryAggregateNotFoundException">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.api_gateway.common.exceptions.</span></span><span class="sig-name descname"><span class="pre">MinosRepositoryAggregateNotFoundException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/api_gateway/common/exceptions.html#MinosRepositoryAggregateNotFoundException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosRepositoryAggregateNotFoundException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#minos.api_gateway.common.exceptions.MinosRepositoryException" title="minos.api_gateway.common.exceptions.MinosRepositoryException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.api_gateway.common.exceptions.MinosRepositoryException</span></code></a></p>
+<p>Exception to be raised when some aggregate is not found on the repository.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosRepositoryAggregateNotFoundException.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosRepositoryAggregateNotFoundException.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosRepositoryAggregateNotFoundException.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosRepositoryAggregateNotFoundException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosRepositoryAggregateNotFoundException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosRepositoryAggregateNotFoundException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosRepositoryDeletedAggregateException">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.api_gateway.common.exceptions.</span></span><span class="sig-name descname"><span class="pre">MinosRepositoryDeletedAggregateException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/api_gateway/common/exceptions.html#MinosRepositoryDeletedAggregateException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosRepositoryDeletedAggregateException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#minos.api_gateway.common.exceptions.MinosRepositoryException" title="minos.api_gateway.common.exceptions.MinosRepositoryException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.api_gateway.common.exceptions.MinosRepositoryException</span></code></a></p>
+<p>Exception to be raised when some aggregate is already deleted from the repository.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosRepositoryDeletedAggregateException.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosRepositoryDeletedAggregateException.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosRepositoryDeletedAggregateException.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosRepositoryDeletedAggregateException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosRepositoryDeletedAggregateException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosRepositoryDeletedAggregateException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosRepositoryException">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.api_gateway.common.exceptions.</span></span><span class="sig-name descname"><span class="pre">MinosRepositoryException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/api_gateway/common/exceptions.html#MinosRepositoryException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosRepositoryException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#minos.api_gateway.common.exceptions.MinosException" title="minos.api_gateway.common.exceptions.MinosException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.api_gateway.common.exceptions.MinosException</span></code></a></p>
+<p>Base repository exception.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosRepositoryException.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosRepositoryException.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosRepositoryException.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosRepositoryException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosRepositoryException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosRepositoryException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosRepositoryManuallySetAggregateIdException">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.api_gateway.common.exceptions.</span></span><span class="sig-name descname"><span class="pre">MinosRepositoryManuallySetAggregateIdException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/api_gateway/common/exceptions.html#MinosRepositoryManuallySetAggregateIdException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosRepositoryManuallySetAggregateIdException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#minos.api_gateway.common.exceptions.MinosRepositoryException" title="minos.api_gateway.common.exceptions.MinosRepositoryException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.api_gateway.common.exceptions.MinosRepositoryException</span></code></a></p>
+<p>Exception to be raised when some aggregate is trying to be created with a manually set id.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosRepositoryManuallySetAggregateIdException.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosRepositoryManuallySetAggregateIdException.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosRepositoryManuallySetAggregateIdException.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosRepositoryManuallySetAggregateIdException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosRepositoryManuallySetAggregateIdException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosRepositoryManuallySetAggregateIdException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosRepositoryManuallySetAggregateVersionException">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.api_gateway.common.exceptions.</span></span><span class="sig-name descname"><span class="pre">MinosRepositoryManuallySetAggregateVersionException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/api_gateway/common/exceptions.html#MinosRepositoryManuallySetAggregateVersionException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosRepositoryManuallySetAggregateVersionException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#minos.api_gateway.common.exceptions.MinosRepositoryException" title="minos.api_gateway.common.exceptions.MinosRepositoryException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.api_gateway.common.exceptions.MinosRepositoryException</span></code></a></p>
+<p>Exception to be raised when some aggregate is trying to be created with a manually set version.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosRepositoryManuallySetAggregateVersionException.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosRepositoryManuallySetAggregateVersionException.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosRepositoryManuallySetAggregateVersionException.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosRepositoryManuallySetAggregateVersionException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosRepositoryManuallySetAggregateVersionException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosRepositoryManuallySetAggregateVersionException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosRepositoryNonProvidedException">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.api_gateway.common.exceptions.</span></span><span class="sig-name descname"><span class="pre">MinosRepositoryNonProvidedException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/api_gateway/common/exceptions.html#MinosRepositoryNonProvidedException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosRepositoryNonProvidedException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#minos.api_gateway.common.exceptions.MinosRepositoryException" title="minos.api_gateway.common.exceptions.MinosRepositoryException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.api_gateway.common.exceptions.MinosRepositoryException</span></code></a></p>
+<p>Exception to be raised when a repository is needed but none is set.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosRepositoryNonProvidedException.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosRepositoryNonProvidedException.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosRepositoryNonProvidedException.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosRepositoryNonProvidedException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosRepositoryNonProvidedException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosRepositoryNonProvidedException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosRepositoryUnknownActionException">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.api_gateway.common.exceptions.</span></span><span class="sig-name descname"><span class="pre">MinosRepositoryUnknownActionException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/api_gateway/common/exceptions.html#MinosRepositoryUnknownActionException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosRepositoryUnknownActionException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#minos.api_gateway.common.exceptions.MinosRepositoryException" title="minos.api_gateway.common.exceptions.MinosRepositoryException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.api_gateway.common.exceptions.MinosRepositoryException</span></code></a></p>
+<p>Exception to be raised when some entry tries to perform an unknown action.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosRepositoryUnknownActionException.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosRepositoryUnknownActionException.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosRepositoryUnknownActionException.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosRepositoryUnknownActionException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosRepositoryUnknownActionException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosRepositoryUnknownActionException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosReqAttributeException">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.api_gateway.common.exceptions.</span></span><span class="sig-name descname"><span class="pre">MinosReqAttributeException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/api_gateway/common/exceptions.html#MinosReqAttributeException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosReqAttributeException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#minos.api_gateway.common.exceptions.MinosModelAttributeException" title="minos.api_gateway.common.exceptions.MinosModelAttributeException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.api_gateway.common.exceptions.MinosModelAttributeException</span></code></a></p>
+<p>Exception to be raised when some required attributes are not provided.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosReqAttributeException.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosReqAttributeException.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosReqAttributeException.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosReqAttributeException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosReqAttributeException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosReqAttributeException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosTypeAttributeException">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.api_gateway.common.exceptions.</span></span><span class="sig-name descname"><span class="pre">MinosTypeAttributeException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/api_gateway/common/exceptions.html#MinosTypeAttributeException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosTypeAttributeException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#minos.api_gateway.common.exceptions.MinosModelAttributeException" title="minos.api_gateway.common.exceptions.MinosModelAttributeException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.api_gateway.common.exceptions.MinosModelAttributeException</span></code></a></p>
+<p>Exception to be raised when there are any mismatching between the expected and observed attribute type.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosTypeAttributeException.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/api_gateway/common/exceptions.html#MinosTypeAttributeException.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosTypeAttributeException.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosTypeAttributeException.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosTypeAttributeException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MinosTypeAttributeException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MinosTypeAttributeException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MultiTypeMinosModelSequenceException">
+<em class="property"><span class="pre">exception</span> </em><span class="sig-prename descclassname"><span class="pre">minos.api_gateway.common.exceptions.</span></span><span class="sig-name descname"><span class="pre">MultiTypeMinosModelSequenceException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/minos/api_gateway/common/exceptions.html#MultiTypeMinosModelSequenceException"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#minos.api_gateway.common.exceptions.MultiTypeMinosModelSequenceException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#minos.api_gateway.common.exceptions.MinosModelException" title="minos.api_gateway.common.exceptions.MinosModelException"><code class="xref py py-class docutils literal notranslate"><span class="pre">minos.api_gateway.common.exceptions.MinosModelException</span></code></a></p>
+<p>Exception to be raised when a sequence doesn’t satisfy the condition to have the same type for each item.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MultiTypeMinosModelSequenceException.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MultiTypeMinosModelSequenceException.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize self.  See help(type(self)) for accurate signature.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MultiTypeMinosModelSequenceException.args">
+<span class="sig-name descname"><span class="pre">args</span></span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MultiTypeMinosModelSequenceException.args" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="minos.api_gateway.common.exceptions.MultiTypeMinosModelSequenceException.with_traceback">
+<span class="sig-name descname"><span class="pre">with_traceback</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minos.api_gateway.common.exceptions.MultiTypeMinosModelSequenceException.with_traceback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exception.with_traceback(tb) –
+set self.__traceback__ to tb and return self.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Clariteia Devs.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

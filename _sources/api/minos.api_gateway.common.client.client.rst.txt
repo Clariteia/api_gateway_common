@@ -1,0 +1,7 @@
+minos.api\_gateway.common.client.client module
+==============================================
+
+.. automodule:: minos.api_gateway.common.client.client
+   :members:
+   :undoc-members:
+   :show-inheritance:

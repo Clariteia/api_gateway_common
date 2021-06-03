@@ -1,0 +1,16 @@
+minos.api\_gateway.common.rest package
+======================================
+
+.. automodule:: minos.api_gateway.common.rest
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   minos.api_gateway.common.rest.loader
+   minos.api_gateway.common.rest.service

@@ -1,0 +1,26 @@
+minos.api\_gateway.common package
+=================================
+
+.. automodule:: minos.api_gateway.common
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   minos.api_gateway.common.client
+   minos.api_gateway.common.configuration
+   minos.api_gateway.common.rest
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   minos.api_gateway.common.exceptions
+   minos.api_gateway.common.importlib

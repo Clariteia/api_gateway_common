@@ -1,0 +1,7 @@
+minos.api\_gateway.common.exceptions module
+===========================================
+
+.. automodule:: minos.api_gateway.common.exceptions
+   :members:
+   :undoc-members:
+   :show-inheritance:

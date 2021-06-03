@@ -1,0 +1,16 @@
+minos.api\_gateway.common.client package
+========================================
+
+.. automodule:: minos.api_gateway.common.client
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   minos.api_gateway.common.client.abc
+   minos.api_gateway.common.client.client

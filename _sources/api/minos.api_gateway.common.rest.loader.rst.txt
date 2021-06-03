@@ -1,0 +1,7 @@
+minos.api\_gateway.common.rest.loader module
+============================================
+
+.. automodule:: minos.api_gateway.common.rest.loader
+   :members:
+   :undoc-members:
+   :show-inheritance:
