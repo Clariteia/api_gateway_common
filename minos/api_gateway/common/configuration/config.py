@@ -11,6 +11,7 @@ from __future__ import (
 
 import abc
 import collections
+from distutils import util
 import os
 import typing as t
 from pathlib import (
@@ -30,10 +31,12 @@ REST = collections.namedtuple("Rest", "connection endpoints")
 DISCOVERY_CONNECTION = collections.namedtuple("DiscoveryConnection", "host port path")
 DATABASE = collections.namedtuple("Database", "host port password")
 DISCOVERY = collections.namedtuple("Discovery", "connection endpoints database")
+CORS = collections.namedtuple("Cors", "enabled")
 
 _ENVIRONMENT_MAPPER = {
     "rest.host": "API_GATEWAY_REST_HOST",
     "rest.port": "API_GATEWAY_REST_PORT",
+    "cors.enabled": "API_GATEWAY_CORS_ENABLED",
     "discovery.host": "DISCOVERY_SERVICE_HOST",
     "discovery.port": "DISCOVERY_SERVICE_PORT",
     "discovery.db.host": "DISCOVERY_SERVICE_DB_HOST",
@@ -44,6 +47,7 @@ _ENVIRONMENT_MAPPER = {
 _PARAMETERIZED_MAPPER = {
     "rest.host": "api_gateway_rest_host",
     "rest.port": "api_gateway_rest_port",
+    "cors.enabled": "api_gateway_cors_enabled",
     "discovery.host": "discovery_service_host",
     "discovery.port": "discovery_service_port",
     "discovery.db.host": "discovery_service_db_host",
@@ -140,6 +144,8 @@ class MinosConfig(MinosConfigAbstract):
             return self._parameterized[_PARAMETERIZED_MAPPER[key]]
 
         if self._with_environment and key in _ENVIRONMENT_MAPPER and _ENVIRONMENT_MAPPER[key] in os.environ:
+            if os.environ[_ENVIRONMENT_MAPPER[key]] in ['true', 'True', 'false', 'False']:
+                return bool(util.strtobool(os.environ[_ENVIRONMENT_MAPPER[key]]))
             return os.environ[_ENVIRONMENT_MAPPER[key]]
 
         def _fn(k: str, data: dict[str, t.Any]) -> t.Any:
@@ -183,6 +189,14 @@ class MinosConfig(MinosConfigAbstract):
             controller=endpoint["controller"],
             action=endpoint["action"],
         )
+
+    @property
+    def cors(self) -> CORS:
+        """Get the cors config.
+
+        :return: A ``CORS`` NamedTuple instance.
+        """
+        return CORS(enabled=self._get("cors.enabled"))
 
     @property
     def discovery(self) -> DISCOVERY:
