@@ -5,18 +5,14 @@ This file is part of minos framework.
 
 Minos framework can not be copied and/or distributed without the express permission of Clariteia SL.
 """
-from __future__ import (
-    annotations,
-)
+from __future__ import annotations
 
 import abc
 import collections
 from distutils import util
 import os
 import typing as t
-from pathlib import (
-    Path,
-)
+from pathlib import Path
 
 import yaml
 
@@ -144,7 +140,7 @@ class MinosConfig(MinosConfigAbstract):
             return self._parameterized[_PARAMETERIZED_MAPPER[key]]
 
         if self._with_environment and key in _ENVIRONMENT_MAPPER and _ENVIRONMENT_MAPPER[key] in os.environ:
-            if os.environ[_ENVIRONMENT_MAPPER[key]] in ['true', 'True', 'false', 'False']:
+            if os.environ[_ENVIRONMENT_MAPPER[key]] in ["true", "True", "false", "False"]:
                 return bool(util.strtobool(os.environ[_ENVIRONMENT_MAPPER[key]]))
             return os.environ[_ENVIRONMENT_MAPPER[key]]
 
