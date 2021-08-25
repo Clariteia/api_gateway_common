@@ -5,7 +5,7 @@ This file is part of minos framework.
 
 Minos framework can not be copied and/or distributed without the express permission of Clariteia SL.
 """
-__version__ = "0.0.4"
+__version__ = "0.0.5"
 
 from minos.api_gateway.common.exceptions import (
     EmptyMinosModelSequenceException,

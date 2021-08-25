@@ -59,6 +59,13 @@ class TestMinosConfig(unittest.TestCase):
         endpoints = discovery.endpoints
         self.assertEqual("Discover", endpoints[0].name)
 
+    def test_config_cors(self):
+        config = MinosConfig(path=self.config_file_path)
+        cors = config.cors
+
+        self.assertIsInstance(cors.enabled, bool)
+        self.assertTrue(cors.enabled)
+
     @mock.patch.dict(os.environ, {"DISCOVERY_SERVICE_HOST": "::1"})
     def test_overwrite_with_environment_discovery_host(self):
         config = MinosConfig(path=self.config_file_path)
@@ -101,10 +108,25 @@ class TestMinosConfig(unittest.TestCase):
         rest = config.rest
         self.assertEqual("localhost", rest.connection.host)
 
+    @mock.patch.dict(os.environ, {"API_GATEWAY_CORS_ENABLED": "false"})
+    def test_overwrite_with_environment_cors(self):
+        config = MinosConfig(path=self.config_file_path)
+        cors = config.cors
+
+        self.assertIsInstance(cors.enabled, bool)
+        self.assertFalse(cors.enabled)
+
     def test_overwrite_with_parameter(self):
         config = MinosConfig(path=self.config_file_path, api_gateway_rest_host="::1")
         rest = config.rest
         self.assertEqual("::1", rest.connection.host)
+
+    def test_overwrite_with_parameter_cors(self):
+        config = MinosConfig(path=self.config_file_path, api_gateway_cors_enabled=False)
+        cors = config.cors
+
+        self.assertIsInstance(cors.enabled, bool)
+        self.assertFalse(cors.enabled)
 
     def test_get_default_default(self):
         with MinosConfig(path=self.config_file_path) as config:

@@ -19,3 +19,7 @@
 
 * Documentation improvement.
 * bugfix
+
+## 0.0.5 (2021-08-25)
+
+* Add `cors` entry to configuration.
