@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>minos.api_gateway.common.configuration.config &mdash; API Gateway Common 0.0.4 documentation</title>
+  <title>minos.api_gateway.common.configuration.config &mdash; API Gateway Common 0.0.5 documentation</title>
   
 
   
@@ -64,7 +64,7 @@
             
             
               <div class="version">
-                0.0.4
+                0.0.5
               </div>
             
           
@@ -177,6 +177,9 @@
 <span class="kn">import</span> <span class="nn">collections</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">typing</span> <span class="k">as</span> <span class="nn">t</span>
+<span class="kn">from</span> <span class="nn">distutils</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">util</span><span class="p">,</span>
+<span class="p">)</span>
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">Path</span><span class="p">,</span>
 <span class="p">)</span>
@@ -194,10 +197,12 @@
 <span class="n">DISCOVERY_CONNECTION</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">namedtuple</span><span class="p">(</span><span class="s2">&quot;DiscoveryConnection&quot;</span><span class="p">,</span> <span class="s2">&quot;host port path&quot;</span><span class="p">)</span>
 <span class="n">DATABASE</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">namedtuple</span><span class="p">(</span><span class="s2">&quot;Database&quot;</span><span class="p">,</span> <span class="s2">&quot;host port password&quot;</span><span class="p">)</span>
 <span class="n">DISCOVERY</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">namedtuple</span><span class="p">(</span><span class="s2">&quot;Discovery&quot;</span><span class="p">,</span> <span class="s2">&quot;connection endpoints database&quot;</span><span class="p">)</span>
+<span class="n">CORS</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">namedtuple</span><span class="p">(</span><span class="s2">&quot;Cors&quot;</span><span class="p">,</span> <span class="s2">&quot;enabled&quot;</span><span class="p">)</span>
 
 <span class="n">_ENVIRONMENT_MAPPER</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;rest.host&quot;</span><span class="p">:</span> <span class="s2">&quot;API_GATEWAY_REST_HOST&quot;</span><span class="p">,</span>
     <span class="s2">&quot;rest.port&quot;</span><span class="p">:</span> <span class="s2">&quot;API_GATEWAY_REST_PORT&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;cors.enabled&quot;</span><span class="p">:</span> <span class="s2">&quot;API_GATEWAY_CORS_ENABLED&quot;</span><span class="p">,</span>
     <span class="s2">&quot;discovery.host&quot;</span><span class="p">:</span> <span class="s2">&quot;DISCOVERY_SERVICE_HOST&quot;</span><span class="p">,</span>
     <span class="s2">&quot;discovery.port&quot;</span><span class="p">:</span> <span class="s2">&quot;DISCOVERY_SERVICE_PORT&quot;</span><span class="p">,</span>
     <span class="s2">&quot;discovery.db.host&quot;</span><span class="p">:</span> <span class="s2">&quot;DISCOVERY_SERVICE_DB_HOST&quot;</span><span class="p">,</span>
@@ -208,6 +213,7 @@
 <span class="n">_PARAMETERIZED_MAPPER</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;rest.host&quot;</span><span class="p">:</span> <span class="s2">&quot;api_gateway_rest_host&quot;</span><span class="p">,</span>
     <span class="s2">&quot;rest.port&quot;</span><span class="p">:</span> <span class="s2">&quot;api_gateway_rest_port&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;cors.enabled&quot;</span><span class="p">:</span> <span class="s2">&quot;api_gateway_cors_enabled&quot;</span><span class="p">,</span>
     <span class="s2">&quot;discovery.host&quot;</span><span class="p">:</span> <span class="s2">&quot;discovery_service_host&quot;</span><span class="p">,</span>
     <span class="s2">&quot;discovery.port&quot;</span><span class="p">:</span> <span class="s2">&quot;discovery_service_port&quot;</span><span class="p">,</span>
     <span class="s2">&quot;discovery.db.host&quot;</span><span class="p">:</span> <span class="s2">&quot;discovery_service_db_host&quot;</span><span class="p">,</span>
@@ -304,6 +310,8 @@
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parameterized</span><span class="p">[</span><span class="n">_PARAMETERIZED_MAPPER</span><span class="p">[</span><span class="n">key</span><span class="p">]]</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_with_environment</span> <span class="ow">and</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">_ENVIRONMENT_MAPPER</span> <span class="ow">and</span> <span class="n">_ENVIRONMENT_MAPPER</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="n">_ENVIRONMENT_MAPPER</span><span class="p">[</span><span class="n">key</span><span class="p">]]</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;true&quot;</span><span class="p">,</span> <span class="s2">&quot;True&quot;</span><span class="p">,</span> <span class="s2">&quot;false&quot;</span><span class="p">,</span> <span class="s2">&quot;False&quot;</span><span class="p">]:</span>
+                <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">util</span><span class="o">.</span><span class="n">strtobool</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="n">_ENVIRONMENT_MAPPER</span><span class="p">[</span><span class="n">key</span><span class="p">]]))</span>
             <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="n">_ENVIRONMENT_MAPPER</span><span class="p">[</span><span class="n">key</span><span class="p">]]</span>
 
         <span class="k">def</span> <span class="nf">_fn</span><span class="p">(</span><span class="n">k</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">t</span><span class="o">.</span><span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">t</span><span class="o">.</span><span class="n">Any</span><span class="p">:</span>
@@ -347,6 +355,14 @@
             <span class="n">controller</span><span class="o">=</span><span class="n">endpoint</span><span class="p">[</span><span class="s2">&quot;controller&quot;</span><span class="p">],</span>
             <span class="n">action</span><span class="o">=</span><span class="n">endpoint</span><span class="p">[</span><span class="s2">&quot;action&quot;</span><span class="p">],</span>
         <span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">cors</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">CORS</span><span class="p">:</span>
+        <span class="sd">&quot;&quot;&quot;Get the cors config.</span>
+
+<span class="sd">        :return: A ``CORS`` NamedTuple instance.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">CORS</span><span class="p">(</span><span class="n">enabled</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">(</span><span class="s2">&quot;cors.enabled&quot;</span><span class="p">))</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span> <span class="nf">discovery</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DISCOVERY</span><span class="p">:</span>
